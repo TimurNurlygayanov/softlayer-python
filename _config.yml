@@ -1,0 +1,105 @@
+#
+# * Config
+# * Stores static configuration and project data (use spaces, not tabs)
+# *
+# * Copyright (c) 2014 SoftLayer, an IBM Company
+# * Released under the MIT license
+#
+
+# ==============================
+# Project
+# ==============================
+
+project:
+  name:           softlayer-python
+  tagline:        A set of Python libraries that assist in calling the SoftLayer API
+  www:            http://softlayer.github.io/softlayer-python
+  version:        0.0.1
+
+# ==============================
+# Company
+# ==============================
+
+company:
+  name:           "SoftLayer, an IBM Company"  # quotes are required only if punctuation is present in the name
+  www:            http://www.softlayer.com
+  twitter:        SoftLayerDevs
+
+# ==============================
+# License
+# ==============================
+
+license:
+  type:           MIT
+  www:            http://github.com/softlayer/softlayer-python/blob/master/LICENSE
+
+# ==============================
+# GitHub
+# ==============================
+
+github:
+  repo:           http://github.com/softlayer/softlayer-python
+  fork:           http://github.com/softlayer/softlayer-python/fork
+  star:           http://github.com/softlayer/softlayer-python/stargazers
+  commits:        http://github.com/softlayer/softlayer-python/commits
+  contributors:   http://github.com/softlayer/softlayer-python/graphs/contributors
+  issues:         http://github.com/softlayer/softlayer-python/issues?state=open
+  milestones:     http://github.com/softlayer/softlayer-python/issues/milestones?state=open
+
+# ==============================
+# API Callbacks (GitHub)
+# ==============================
+
+ajax:
+  milestones:     https://api.github.com/repos/softlayer/softlayer-python/milestones?state=closed/callback?
+  commits:        https://api.github.com/repos/softlayer/softlayer-python/commits?state=closed/callback?
+
+json:
+  contributors:   https://api.github.com/repos/softlayer/softlayer-python/contributors?callback=?
+  repos:          https://api.github.com/orgs/softlayer/repos?callback=?
+  members:        https://api.github.com/orgs/softlayer/members?callback=?
+
+# ==============================
+# Markdown
+# ==============================
+
+highlighter:      rouge
+markdown:         redcarpet
+redcarpet:
+  extensions:     [ "autolink",
+                    "fenced_code_blocks",
+                    "lax_spacing",
+                    "smart",
+                    "strikethrough",
+                    "superscript",
+                    "tables",
+                    "underline",
+                    "with_toc_data"
+                  ]
+
+# ==============================
+# Server
+# ==============================
+
+destination:      _www
+baseurl:          /softlayer-python
+permalink:        pretty
+exclude:          [ ".gitignore",
+                    "Gemfile",
+                    "Gruntfile*",
+                    "coffee",
+                    "less",
+                    "LICENSE",
+                    "node_modules",
+                    "package.json",
+                    "Rakefile",
+                    "README.md"
+                  ]
+
+# ==============================
+# Analytics
+# ==============================
+
+google:
+  id:             UA-XXXXXXXX-X
+  domain:         XXXXXX.github.io
