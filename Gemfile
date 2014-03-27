@@ -4,7 +4,7 @@
 source "https://rubygems.org"
 
 gem "rake",         "~> 10.1.1"
-gem "jekyll",       "1.4.2"
+gem "jekyll",       "1.5.0"
 gem "maruku",       "0.7.0",    :require => false
 gem "toml",         "0.1.1",    :require => false
 gem "parslet",      "1.5.0",    :require => false
