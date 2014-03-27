@@ -58,6 +58,7 @@ module.exports = (grunt) ->
         options:
           banner: "<%= banner %>"
         src: [
+          "<%= coffee.cache.dest %>suppress.js"
           "<%= coffee.cache.dest %>folio.js"
           "<%= coffee.cache.dest %>metrics.js"
           "<%= coffee.cache.dest %>tocify.js"

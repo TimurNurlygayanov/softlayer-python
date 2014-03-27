@@ -38,6 +38,7 @@ license:
 # ==============================
 
 github:
+  org:            http://github.com/softlayer
   repo:           http://github.com/softlayer/softlayer-python
   fork:           http://github.com/softlayer/softlayer-python/fork
   star:           http://github.com/softlayer/softlayer-python/stargazers

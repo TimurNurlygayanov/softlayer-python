@@ -1,0 +1,9 @@
+{% comment %}
+  Determines what to show in the browsers titlebar
+{% endcomment %}
+
+{% if page.header == {{site.project.name}} %}
+  {{page.header}} &ndash; {{site.project.tagline}}
+{% else %}
+  {{page.header}} &ndash; {{site.project.name}}
+{% endif %}

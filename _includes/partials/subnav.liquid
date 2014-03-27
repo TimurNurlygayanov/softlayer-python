@@ -1,0 +1,7 @@
+{% comment %}
+  Feeds results from tocify.coffee into the subnav for any page with "layout: default" front-matter
+{% endcomment %}
+
+{% if layout == default %}
+  <li class="tocify"></li>
+{% endif %}
