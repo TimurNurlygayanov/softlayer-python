@@ -1,6 +1,6 @@
 #
 # * Tocify
-# * A groovy, little TOC generator for built-in page navigation
+# * A ridiculously simple TOC generator for built-in page navigation
 # *
 # * Copyright (c) 2014 SoftLayer, an IBM Company
 # * Released under the MIT license
