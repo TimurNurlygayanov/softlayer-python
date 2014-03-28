@@ -1,0 +1,589 @@
+
+/* Mixins
+   ========================= */
+
+.clearfix() {
+  &:before,
+  &:after {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+.tab-focus() {
+  outline: thin dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+
+.center-block() {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.size(@width; @height) {
+  width: @width;
+  height: @height;
+}
+
+.square(@size) {
+  .size(@size; @size);
+}
+
+// Text properties
+// -------------------------
+
+.text-emphasis-variant(@color) {
+  color: @color;
+  a&:hover {
+    color: darken(@color, 10%);
+  }
+}
+
+.text-overflow() {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.hide-text() {
+  font: ~"0/0" a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
+
+// CSS3 properties
+// -------------------------
+
+// Single side border-radius
+
+.border-top-radius(@radius) {
+  border-top-right-radius: @radius;
+   border-top-left-radius: @radius;
+}
+.border-right-radius(@radius) {
+  border-bottom-right-radius: @radius;
+     border-top-right-radius: @radius;
+}
+.border-bottom-radius(@radius) {
+  border-bottom-right-radius: @radius;
+   border-bottom-left-radius: @radius;
+}
+.border-left-radius(@radius) {
+  border-bottom-left-radius: @radius;
+     border-top-left-radius: @radius;
+}
+
+// Transitions
+
+.transition(@transition) {
+  -webkit-transition: @transition;
+          transition: @transition;
+}
+.transition-property(@transition-property) {
+  -webkit-transition-property: @transition-property;
+          transition-property: @transition-property;
+}
+.transition-delay(@transition-delay) {
+  -webkit-transition-delay: @transition-delay;
+          transition-delay: @transition-delay;
+}
+.transition-duration(@transition-duration) {
+  -webkit-transition-duration: @transition-duration;
+          transition-duration: @transition-duration;
+}
+.transition-transform(@transition) {
+  -webkit-transition: -webkit-transform @transition;
+     -moz-transition: -moz-transform @transition;
+       -o-transition: -o-transform @transition;
+          transition: transform @transition;
+}
+
+// Animations
+
+.animation(@animation) {
+  -webkit-animation: @animation;
+          animation: @animation;
+}
+
+.animation-name(@name) {
+  -webkit-animation-name: @name;
+          animation-name: @name;
+}
+
+.animation-duration(@duration) {
+  -webkit-animation-duration: @duration;
+          animation-duration: @duration;
+}
+
+.animation-timing-function(@timing-function) {
+  -webkit-animation-timing-function: @timing-function;
+          animation-timing-function: @timing-function;
+}
+
+.animation-delay(@delay) {
+  -webkit-animation-delay: @delay;
+          animation-delay: @delay;
+}
+
+.animation-iteration-count(@iteration-count) {
+  -webkit-animation-iteration-count: @iteration-count;
+          animation-iteration-count: @iteration-count;
+}
+
+.animation-direction(@direction) {
+  -webkit-animation-direction: @direction;
+          animation-direction: @direction;
+}
+
+// Backface visibility
+
+.backface-visibility(@visibility){
+  -webkit-backface-visibility: @visibility;
+     -moz-backface-visibility: @visibility;
+          backface-visibility: @visibility;
+}
+
+// Box sizing
+
+.box-sizing(@boxmodel) {
+  -webkit-box-sizing: @boxmodel;
+     -moz-box-sizing: @boxmodel;
+          box-sizing: @boxmodel;
+}
+
+// Resizing
+
+.resizable(@direction) {
+  resize: @direction; // Options: horizontal, vertical, both
+  overflow: auto;
+}
+
+// CSS3 content columns
+
+.content-columns(@column-count; @column-gap: @grid-gutter-width) {
+  -webkit-column-count: @column-count;
+     -moz-column-count: @column-count;
+          column-count: @column-count;
+    -webkit-column-gap: @column-gap;
+       -moz-column-gap: @column-gap;
+            column-gap: @column-gap;
+}
+
+// Optional hyphenation
+
+.hyphens(@mode: auto) {
+  word-wrap: break-word;
+  -webkit-hyphens: @mode;
+     -moz-hyphens: @mode;
+      -ms-hyphens: @mode;
+       -o-hyphens: @mode;
+          hyphens: @mode;
+}
+
+// Opacity
+
+.opacity(@opacity) {
+  opacity: @opacity;
+}
+
+// Image mixins
+// -------------------------
+
+.img-retina(@file-1x; @file-2x; @width-1x; @height-1x) {
+  background-image: url("@{file-1x}");
+
+  @media
+  only screen and (-webkit-min-device-pixel-ratio: 2),
+  only screen and (   min--moz-device-pixel-ratio: 2),
+  only screen and (     -o-min-device-pixel-ratio: 2/1),
+  only screen and (        min-device-pixel-ratio: 2),
+  only screen and (                min-resolution: 192dpi),
+  only screen and (                min-resolution: 2dppx) {
+    background-image: url("@{file-2x}");
+    background-size: @width-1x @height-1x;
+  }
+}
+
+.img-responsive(@display: block) {
+  display: @display;
+  max-width: 100%;
+  height: auto;
+}
+
+// Components mixins
+// -------------------------
+
+.nav-divider(@color: @lighter6) {
+  height: 1px;
+  margin: @component-margin 0;
+  overflow: hidden;
+  background-color: @color;
+}
+
+// Panels
+// -------------------------
+
+.panel-variant(@border; @heading-text-color; @heading-bg-color; @heading-border) {
+  border-color: @border;
+
+  & > .panel-heading {
+    color: @heading-text-color;
+    background-color: @heading-bg-color;
+    border-color: @heading-border;
+
+    + .panel-collapse .panel-body {
+      border-top-color: @border;
+    }
+  }
+  & > .panel-footer {
+    + .panel-collapse .panel-body {
+      border-bottom-color: @border;
+    }
+  }
+}
+
+// List Groups
+// -------------------------
+
+.lists-item-variant(@background; @color) {
+  .lists-item-@{color} {
+    color: @color;
+    background-color: @background;
+
+    a& {
+      color: @color;
+
+      .lists-item-heading { color: inherit; }
+
+      &:hover,
+      &:focus {
+        color: @color;
+        background-color: darken(@background, 5%);
+      }
+      &.active,
+      &.active:hover,
+      &.active:focus {
+        color: @white;
+        background-color: @color;
+        border-color: @color;
+      }
+    }
+  }
+}
+
+// Button variants
+// -------------------------
+
+.button-variant(@color; @background; @border) {
+  color: @color;
+  background-color: @background;
+  border-color: @border;
+  &:hover,
+  &:focus,
+  &:active,
+  &.active {
+    color: @background;
+    background-color: @border;
+    border-color: @border;
+  }
+  &:active,
+  &.active {
+    background-image: none;
+  }
+}
+
+.solid-button-variant(@color; @background; @border) {
+  color: @color;
+  background-color: @background;
+  border-color: @border;
+  &:hover,
+  &:focus,
+  &:active,
+  &.active {
+    color: @color;
+    background-color: darken(@background, 8%);
+        border-color: darken(@border, 12%);
+  }
+  &:active,
+  &.active {
+    background-image: none;
+  }
+}
+
+// Button sizes
+// -------------------------
+
+.button-size(@padding-vertical; @padding-horizontal; @font-size; @line-height; @border-radius) {
+  padding: @padding-vertical @padding-horizontal;
+  font-size: @font-size;
+  line-height: @line-height;
+  border-radius: @border-radius;
+}
+
+// Pagination
+// -------------------------
+
+.pagination-size(@padding-vertical; @padding-horizontal; @font-size; @border-radius) {
+  > li {
+    > a,
+    > span {
+      padding: @padding-vertical @padding-horizontal;
+      font-size: @font-size;
+    }
+
+    &:first-child {
+      > a,
+      > span {
+        .border-left-radius(@border-radius);
+      }
+    }
+
+    &:last-child {
+      > a,
+      > span {
+        .border-right-radius(@border-radius);
+      }
+    }
+  }
+}
+
+// Responsiveness
+// -------------------------
+
+.responsive-visibility() {
+  display: block !important;
+  table&  { display: table; }
+  tr&     { display: table-row !important; }
+  th&,
+  td&     { display: table-cell !important; }
+}
+
+.responsive-invisibility() {
+    &,
+  tr&,
+  th&,
+  td& { display: none !important; }
+}
+
+// Grid system
+// -------------------------
+
+.container-fixed() {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left:  (@grid-gutter-width / 2);
+  padding-right: (@grid-gutter-width / 2);
+  .clearfix();
+}
+
+.make-row(@gutter: @grid-gutter-width) {
+  margin-left:  (@gutter / -2);
+  margin-right: (@gutter / -2);
+  .clearfix();
+}
+
+.make-xs-column(@columns; @gutter: @grid-gutter-width) {
+  position: relative;
+  float: left;
+  width: percentage((@columns / @grid-columns));
+  min-height: 1px;
+  padding-left:  (@gutter / 2);
+  padding-right: (@gutter / 2);
+}
+
+.make-xs-column-offset(@columns) {
+  @media (min-width: @screen-xs) {
+    margin-left: percentage((@columns / @grid-columns));
+  }
+}
+
+.make-xs-column-push(@columns) {
+  @media (min-width: @screen-xs) {
+    left: percentage((@columns / @grid-columns));
+  }
+}
+
+.make-xs-column-pull(@columns) {
+  @media (min-width: @screen-xs) {
+    right: percentage((@columns / @grid-columns));
+  }
+}
+
+// Generates small columns
+
+.make-sm-column(@columns; @gutter: @grid-gutter-width) {
+  position: relative;
+  min-height: 1px;
+  padding-left:  (@gutter / 2);
+  padding-right: (@gutter / 2);
+
+  @media (min-width: @screen-sm) {
+    float: left;
+    width: percentage((@columns / @grid-columns));
+  }
+}
+
+.make-sm-column-offset(@columns) {
+  @media (min-width: @screen-sm) {
+    margin-left: percentage((@columns / @grid-columns));
+  }
+}
+
+.make-sm-column-push(@columns) {
+  @media (min-width: @screen-sm) {
+    left: percentage((@columns / @grid-columns));
+  }
+}
+
+.make-sm-column-pull(@columns) {
+  @media (min-width: @screen-sm) {
+    right: percentage((@columns / @grid-columns));
+  }
+}
+
+// Generates medium columns
+
+.make-md-column(@columns; @gutter: @grid-gutter-width) {
+  position: relative;
+  min-height: 1px;
+  padding-left:  (@gutter / 2);
+  padding-right: (@gutter / 2);
+
+  @media (min-width: @screen-md) {
+    float: left;
+    width: percentage((@columns / @grid-columns));
+  }
+}
+
+.make-md-column-offset(@columns) {
+  @media (min-width: @screen-md) {
+    margin-left: percentage((@columns / @grid-columns));
+  }
+}
+
+.make-md-column-push(@columns) {
+  @media (min-width: @screen-md) {
+    left: percentage((@columns / @grid-columns));
+  }
+}
+
+.make-md-column-pull(@columns) {
+  @media (min-width: @screen-md) {
+    right: percentage((@columns / @grid-columns));
+  }
+}
+
+// Generates large columns
+
+.make-lg-column(@columns; @gutter: @grid-gutter-width) {
+  position: relative;
+  min-height: 1px;
+  padding-left:  (@gutter / 2);
+  padding-right: (@gutter / 2);
+
+  @media (min-width: @screen-lg) {
+    float: left;
+    width: percentage((@columns / @grid-columns));
+  }
+}
+
+.make-lg-column-offset(@columns) {
+  @media (min-width: @screen-lg) {
+    margin-left: percentage((@columns / @grid-columns));
+  }
+}
+
+.make-lg-column-push(@columns) {
+  @media (min-width: @screen-lg) {
+    left: percentage((@columns / @grid-columns));
+  }
+}
+
+.make-lg-column-pull(@columns) {
+  @media (min-width: @screen-lg) {
+    right: percentage((@columns / @grid-columns));
+  }
+}
+
+// Framework grid
+// -------------------------
+
+.make-grid-columns() {
+
+  .col(@index) when (@index = 1) { // initial
+    @item: ~".col-xs-@{index}, .col-sm-@{index}, .col-md-@{index}, .col-lg-@{index}";
+    .col((@index + 1), @item);
+  }
+
+  .col(@index, @list) when (@index =< @grid-columns) { // general; "=<" isn't a typo
+    @item: ~".col-xs-@{index}, .col-sm-@{index}, .col-md-@{index}, .col-lg-@{index}";
+    .col((@index + 1), ~"@{list}, @{item}");
+  }
+
+  .col(@index, @list) when (@index > @grid-columns) {
+    @{list} {
+      position: relative;
+      min-height: 1px;
+      padding-left:  (@grid-gutter-width / 2);
+      padding-right: (@grid-gutter-width / 2);
+    }
+  }
+
+  .col(1);
+}
+
+.make-grid-columns-float(@class) {
+  .col(@index) when (@index = 1) {
+    @item: ~".col-@{class}-@{index}";
+    .col((@index + 1), @item);
+  }
+
+  .col(@index, @list) when (@index =< @grid-columns) {
+    @item: ~".col-@{class}-@{index}";
+    .col((@index + 1), ~"@{list}, @{item}");
+  }
+
+  .col(@index, @list) when (@index > @grid-columns) {
+    @{list} {
+      float: left;
+    }
+  }
+
+  .col(1);
+}
+
+.calc-grid(@index, @class, @type) when (@type = width) and (@index > 0) {
+  .col-@{class}-@{index} {
+    width: percentage((@index / @grid-columns));
+  }
+}
+
+.calc-grid(@index, @class, @type) when (@type = push) {
+  .col-@{class}-push-@{index} {
+    left: percentage((@index / @grid-columns));
+  }
+}
+
+.calc-grid(@index, @class, @type) when (@type = pull) {
+  .col-@{class}-pull-@{index} {
+    right: percentage((@index / @grid-columns));
+  }
+}
+
+.calc-grid(@index, @class, @type) when (@type = offset) {
+  .col-@{class}-offset-@{index} {
+    margin-left: percentage((@index / @grid-columns));
+  }
+}
+
+.make-grid(@index, @class, @type) when (@index >= 0) {
+  .calc-grid(@index, @class, @type);
+  .make-grid((@index - 1), @class, @type);
+}

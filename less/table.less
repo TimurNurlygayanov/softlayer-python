@@ -1,0 +1,57 @@
+
+/* Table
+   ========================= */
+
+table {
+  display: block;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  margin: 1em 0;
+  max-width: 100%;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+
+  > thead {
+    border-top: 1px solid transparent;
+    border-right: 1px solid transparent;
+    border-bottom: 1px solid @table-border-color;
+    border-left: 1px solid transparent;
+    background-color: transparent;
+    color: @black;
+    text-align: left;
+
+    > tr {
+      > th,
+      > td {
+        padding: .3em .9em .3em .8em;
+        white-space: nowrap;
+      }
+    }
+  }
+
+  > tbody {
+    overflow-x: auto;
+    > tr {
+      > th,
+      > td {
+        padding: .3em .9em .3em .8em;
+        border: 1px solid @table-border-color;
+        white-space: nowrap;
+      }
+    }
+  }
+
+  > tbody > tr:nth-child(even) {
+    > td,
+    > th {
+      background-color: @table-bg-accent;
+    }
+  }
+}
+
+@media (min-width: @screen-sm) {
+  table {
+    display: table;
+    margin-bottom: (@line-height-calculated * 0.75);
+  }
+}

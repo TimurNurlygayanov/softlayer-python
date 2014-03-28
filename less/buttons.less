@@ -1,0 +1,130 @@
+
+/* Buttons
+   ========================= */
+
+// Normal buttons
+// -------------------------
+
+.btn {
+  .button-size(@padding-normal-vertical; @padding-normal-horizontal; @button-font-size-normal; @line-height-normal; @border-radius-normal);
+  .button-variant(@btn-default-color; @btn-default-bg; @btn-default-border);
+  display: inline-block;
+  letter-spacing: 1px;
+  border: 2px solid transparent;
+  vertical-align: middle;
+  text-align: center;
+  text-transform: uppercase;
+  white-space: nowrap;
+  font-family: @font-family-normal;
+  font-weight: 400;
+  cursor: pointer;
+  transition-duration: .3s;
+  transition-property: all;
+
+  &:focus {
+    .tab-focus();
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    outline: none;
+    color: @btn-default-bg;
+    text-decoration: none;
+    transition-duration: .3s;
+    transition-property: all;
+  }
+
+  &.solid {
+    .solid-button-variant(@solid-btn-default-color; @solid-btn-default-bg; @solid-btn-default-border);
+  }
+}
+
+// Normal variants
+
+.gray  {.button-variant(@btn-gray-color; @btn-gray-bg; @btn-gray-border);}
+.red   {.button-variant(@btn-red-color; @btn-red-bg; @btn-red-border);}
+.green {.button-variant(@btn-green-color; @btn-green-bg; @btn-green-border);}
+.blue  {.button-variant(@btn-blue-color; @btn-blue-bg; @btn-blue-border);}
+
+// Solid variants
+
+.solid       {.solid-button-variant(@solid-btn-default-color; @solid-btn-default-bg; @solid-btn-default-border);}
+.solid-gray  {.solid-button-variant(@solid-btn-gray-color; @solid-btn-gray-bg; @solid-btn-gray-border);}
+.solid-red   {.solid-button-variant(@solid-btn-red-color; @solid-btn-red-bg; @solid-btn-red-border);}
+.solid-green {.solid-button-variant(@solid-btn-green-color; @solid-btn-green-bg; @solid-btn-green-border);}
+.solid-blue  {.solid-button-variant(@solid-btn-blue-color; @solid-btn-blue-bg; @solid-btn-blue-border);}
+
+// Button sizes
+// -------------------------
+
+.large {.button-size(@padding-large-vertical; @padding-large-horizontal; @button-font-size-large; @line-height-large; @border-radius-large);
+  letter-spacing: 2px;
+}
+
+.small {.button-size(@padding-small-vertical; @padding-small-horizontal; @button-font-size-small; @line-height-small; @border-radius-small);
+  letter-spacing: 2px;
+  font-family: @font-family-normal;
+}
+
+// Circle
+// -------------------------
+
+.circle {
+  margin-top: 15px;
+  padding: @component-padding;
+  width: 70px;
+  height: 70px;
+  border: 2px solid @white;
+  border-radius: 35px;
+  background: transparent;
+  color: @white;
+  font-size: floor(@button-font-size-normal * 3);
+  -webkit-transition: background .3s ease-in-out;
+     -moz-transition: background .3s ease-in-out;
+          transition: background .3s ease-in-out;
+}
+
+.circle:hover,
+.circle:focus {
+  outline: 0;
+  background: rgba(255,255,255,.1);
+  color: @white;
+}
+
+// Transparent
+// -------------------------
+
+.transparent {
+  margin-right: 10px;
+  padding: 1.5em 1em;
+  width: 12em;
+  border: 3px solid @white!important;
+  border-radius: @border-radius-large;
+  background: transparent;
+  color: @white;
+  font-family: @font-family-normal;
+  line-height: 1!important;
+  transition-duration: .3s;
+  transition-property: all;
+}
+
+.transparent:hover,
+.transparent:focus,
+.transparent:active {
+  background-color:rgba(255,255,255,.2)!important;
+  color: @lighter9;
+  transition-duration: .3s;
+  transition-property: all;
+}
+
+@media (min-width: @screen-sm) {
+  .transparent,
+  .transparent:hover,
+  .transparent:focus,
+  .transparent:active {
+    padding: 18px;
+    width: 14em;
+    height: 4em;
+  }
+}

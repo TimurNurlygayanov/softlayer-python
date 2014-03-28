@@ -1,0 +1,88 @@
+
+/* Screens
+   ========================= */
+
+@screen-xs:                 480px;
+@screen-sm:                 768px;
+@screen-md:                 992px;
+@screen-lg:                 1200px;
+
+// Prevents media queries from overlapping
+
+@screen-xs-max:             (@screen-sm - 1);
+@screen-sm-max:             (@screen-md - 1);
+@screen-md-max:             (@screen-lg - 1);
+
+// Container sizes
+// -------------------------
+
+@container-sm:              ((720px + @grid-gutter-width));
+@container-md:              ((940px + @grid-gutter-width));
+@container-lg:              ((1140px + @grid-gutter-width));
+
+// Responsive view
+// -------------------------
+
+@-ms-viewport {
+  width: device-width;
+}
+
+// Visibile
+
+.visible-xs {
+  .responsive-invisibility();
+
+  @media (max-width: @screen-xs-max) {
+    .responsive-visibility();
+  }
+}
+
+.visible-sm {
+  .responsive-invisibility();
+
+  @media (min-width: @screen-sm) and (max-width: @screen-sm-max) {
+    .responsive-visibility();
+  }
+}
+
+.visible-md {
+  .responsive-invisibility();
+
+  @media (min-width: @screen-md) and (max-width: @screen-md-max) {
+    .responsive-visibility();
+  }
+}
+
+.visible-lg {
+  .responsive-invisibility();
+
+  @media (min-width: @screen-lg) {
+    .responsive-visibility();
+  }
+}
+
+// Hidden
+
+.hidden-xs {
+  @media (max-width: @screen-xs-max) {
+    .responsive-invisibility();
+  }
+}
+
+.hidden-sm {
+  @media (min-width: @screen-sm) and (max-width: @screen-sm-max) {
+    .responsive-invisibility();
+  }
+}
+
+.hidden-md {
+  @media (min-width: @screen-md) and (max-width: @screen-md-max) {
+    .responsive-invisibility();
+  }
+}
+
+.hidden-lg {
+  @media (min-width: @screen-lg) {
+    .responsive-invisibility();
+  }
+}
