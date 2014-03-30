@@ -1,8 +1,7 @@
-
-/* Base
+/* BASE
    ========================= */
 
-// Body reset
+// Body
 // -------------------------
 
 *,
@@ -19,16 +18,38 @@ html {
 
 body {
   background-color: @body-bg;
-  color: @text-color;
+  color: @black;
+  text-shadow: none;
+  font-weight: @font-weight-normal;
+  font-style: normal;
+  font-family: @font-family-sans;
   font-size: @font-size-normal;
-  font-family: @font-family-normal;
   line-height: @line-height-normal;
+  -webkit-font-smoothing: antialiased;
 }
 
 button {
   font-size: inherit;
   font-family: inherit;
   line-height: inherit;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+del {
+  text-decoration: line-through;
+}
+
+pre {
+  word-wrap: break-word;
 }
 
 // Links

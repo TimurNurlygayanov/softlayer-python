@@ -72,11 +72,11 @@ module.exports = (grunt) ->
         report: "min"
       build:
         src: "<%= concat.build.dest %>"
-        dest: "public/javascript/main.min.js"
+        dest: "public/javascript/main.js"
 
     # Rounds up all the Less morsels to make one big CSS cookie
     recess:
-      build:
+      unminify:
         options:
           compile: true
           compress: false
@@ -90,10 +90,10 @@ module.exports = (grunt) ->
           compile: true
           compress: true
           banner: "<%= banner %>"
-        src: ["<%= recess.build.src %>"]
-        dest: "public/css/main.min.css"
+        src: ["less/@import.less"]
+        dest: "public/css/main.css"
 
-    # This makes Jekyll easier. Instead of typing "jekyll serve -w --baseurl('')" to start it locally, you can just type "grunt preview".
+    # Instead of typing "jekyll serve -w --baseurl('')" to start Jekyll locally, just type "grunt preview".
     jekyll:
       test: {}
       preview:
@@ -102,7 +102,7 @@ module.exports = (grunt) ->
           serve: true
           baseurl: ["\"\""]
 
-    # Here, the W3C tells us how much our HTML doesn't comply with their standard
+    # Determines whether HTML DOM and elements complies with W3C standards
     validation:
       options:
         charset: "UTF-8"
@@ -135,7 +135,15 @@ module.exports = (grunt) ->
     "coffee"
     "concat"
     "uglify"
-    "recess"
+    "recess:minify"
+    "clean:after"
+  ]
+
+  grunt.registerTask "build:pretty", [
+    "clean:before"
+    "coffee"
+    "concat"
+    "recess:unminify"
     "clean:after"
   ]
 
@@ -149,6 +157,11 @@ module.exports = (grunt) ->
 
   grunt.registerTask "serve", [
     "build"
+    "jekyll:preview"
+  ]
+
+  grunt.registerTask "serve:pretty", [
+    "build-uncompressed"
     "jekyll:preview"
   ]
 

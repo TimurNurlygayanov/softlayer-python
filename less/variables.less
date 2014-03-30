@@ -1,0 +1,419 @@
+/* VARIABLES
+   ========================= */
+
+/*
+ * Contents
+ *
+ * 1. Colors
+ * 2. Fonts
+ * 3. Box sizing
+ * 4. Dimensions
+ * 5. Grid system
+ * 6. Miscellaneous
+ *
+ */
+
+/* COLORS
+   ========================= */
+
+// Defaults
+// -------------------------
+
+@white:                     #fff;
+
+@lighter9:                  #fafafa;
+@lighter8:                  #f4f4f4;
+@lighter7:                  #f0f0f0;
+@lighter6:                  #e4e4e4;
+@lighter5:                  #cccccb;
+@lighter4:                  #a6a9ad;
+@lighter3:                  #747c7f;
+@lighter2:                  #464a4c;
+@lighter1:                  #2e3133;
+
+@black:                     #1f2123;
+
+// Palette
+// -------------------------
+
+@default:                   @black;
+@gray:                      #81868c;
+@blue:                      #0e90d2;
+@green:                     #1abc9c;
+@red:                       #e74c3c;
+
+// Links
+// -------------------------
+
+@link-color:                #2d6ca2;
+@link-hover-color:          darken(@link-color, 10%);
+
+// Footer
+// -------------------------
+
+@footer-link:               @lighter4;
+@footer-border:             @lighter7;
+@footer-hover:              darken(@footer-link, 10%);
+
+// Base
+// -------------------------
+
+@body-bg:                   @white;
+@text-color:                @black;
+
+// Blockquote
+// -------------------------
+
+@blockquote-small-color:    @lighter4;
+@blockquote-border-color:   @lighter4;
+@blockquote-color:          @lighter3;
+
+// Headings
+// -------------------------
+
+@headings-color:            @black;
+@headings-color-small:      @lighter4;
+
+// Sidebar
+// -------------------------
+
+@sidebar-bg:                @lighter1;
+@sidebar-color:             @lighter8;
+@sidebar-links:             @white;
+
+@sidebar-toggle-gray:       @lighter5;
+@sidebar-toggle-white:      @white;
+@sidebar-toggle-active:     @default;
+
+@sidebar-divider:           #454546;
+
+// Subnav
+// -------------------------
+
+@subnav-color:              @lighter4;
+@subnav-hover-bg:           @lighter8;
+@subnav-hover-color:        @lighter4;
+
+// Buttons
+// -------------------------
+
+// Normal
+
+@btn-default-color:         darken(@default, 8%);
+@btn-default-bg:            @white;
+@btn-default-border:        @default;
+
+@btn-gray-color:            darken(@gray, 8%);
+@btn-gray-bg:               @white;
+@btn-gray-border:           @gray;
+
+@btn-red-color:             darken(@red, 8%);
+@btn-red-bg:                @white;
+@btn-red-border:            @red;
+
+@btn-blue-color:            darken(@blue, 8%);
+@btn-blue-bg:               @white;
+@btn-blue-border:           @blue;
+
+@btn-green-color:           darken(@green, 8%);
+@btn-green-bg:              @white;
+@btn-green-border:          @green;
+
+@btn-font-weight:           normal;
+
+// Solid
+
+@solid-btn-default-color:   @white;
+@solid-btn-default-bg:      @default;
+@solid-btn-default-border:  @default;
+
+@solid-btn-gray-color:      @white;
+@solid-btn-gray-bg:         @gray;
+@solid-btn-gray-border:     @gray;
+
+@solid-btn-red-color:       @white;
+@solid-btn-red-bg:          @red;
+@solid-btn-red-border:      @red;
+
+@solid-btn-blue-color:      @white;
+@solid-btn-blue-bg:         @blue;
+@solid-btn-blue-border:     @blue;
+
+@solid-btn-green-color:     @white;
+@solid-btn-green-bg:        @green;
+@solid-btn-green-border:    @green;
+
+@solid-btn-font-weight:     normal;
+
+// Components
+// -------------------------
+
+@component-active-color:    @lighter9;
+@component-active-bg:       @gray;
+
+// Table
+// -------------------------
+
+@table-bg-accent:           @lighter8;
+@table-border-color:        @lighter6;
+
+// Message
+// -------------------------
+
+@message-default-color:     @white;
+@message-default-bg:        @default;
+@message-default-border:    @default;
+
+// Pagination
+// -------------------------
+
+@pagination-color:          @link-color;
+@pagination-bg:             @lighter9;
+@pagination-border:         @lighter5;
+
+@pagination-hover-color:    @link-hover-color;
+@pagination-hover-bg:       @lighter5;
+@pagination-hover-border:   @lighter5;
+
+@pagination-active-border:  @gray;
+@pagination-active-bg:      @gray;
+@pagination-active-color:   @lighter9;
+
+@pagination-disabled-color: @lighter4;
+@pagination-disabled-bg:    @lighter9;
+@pagination-disabled-border:@lighter5;
+
+// Pager
+// -------------------------
+
+@pager-bg:                  @pagination-bg;
+@pager-border:              @pagination-border;
+@pager-hover-bg:            @pagination-hover-bg;
+
+@pager-active-bg:           @pagination-active-bg;
+@pager-active-color:        @pagination-active-color;
+
+@pager-disabled-color:      @pagination-disabled-color;
+
+// Lists
+// -------------------------
+
+@lists-bg:                  @lighter9;
+@lists-border:              @lighter5;
+@lists-hover-bg:            @lighter7;
+
+@lists-active-color:        @component-active-color;
+@lists-active-bg:           @component-active-bg;
+@lists-active-border:       @lists-active-bg;
+@lists-active-text-color:   lighten(@lists-active-bg, 40%);
+
+@lists-link-color:          @lighter3;
+@lists-link-heading-color:  @lighter1;
+
+// Panels
+// -------------------------
+
+@panel-bg:                  @lighter9;
+
+@panel-inner-border:        @lighter5;
+@panel-footer-bg:           @lighter7;
+
+@panel-default-text:        @lighter2;
+@panel-default-border:      @lighter5;
+@panel-default-heading-bg:  @lighter7;
+
+@panel-gray-text:           @white;
+@panel-gray-border:         @gray;
+@panel-gray-heading-bg:     @gray;
+
+@panel-green-text:          @white;
+@panel-green-border:        @green;
+@panel-green-heading-bg:    @green;
+
+@panel-red-text:            @white;
+@panel-red-border:          @red;
+@panel-red-heading-bg:      @red;
+
+@panel-blue-text:           @white;
+@panel-blue-border:         @blue;
+@panel-blue-heading-bg:     @blue;
+
+// Breadcrumb
+// -------------------------
+
+@breadcrumb-bg:             @lighter7;
+@breadcrumb-color:          @lighter5;
+@breadcrumb-active-color:   @lighter2;
+
+// Code
+// -------------------------
+
+@code-color:                #d44950;
+@code-bg:                   @lighter9;
+@code-border:               @lighter7;
+
+@pre-bg:                    @lighter8;
+@pre-color:                 @lighter1;
+@pre-border-color:          @lighter6;
+
+// Hero
+// -------------------------
+
+@hero-bg:                   @lighter8;
+@hero-color:                inherit;
+@hero-heading-color:        inherit;
+
+// Miscellaneous
+// -------------------------
+
+@hr-color:                  @lighter6;
+
+// Nav
+// -------------------------
+
+@nav-link-hover-bg:                             @lighter5;
+@nav-open-link-hover-color:                     @lighter9;
+
+@tabs-border-color:                             @lighter5;
+@tabs-link-hover-border-color:                  @lighter5;
+@tabs-active-link-hover-bg:                     @body-bg;
+@tabs-active-link-hover-color:                  @lighter3;
+@tabs-active-link-hover-border-color:           @lighter5;
+
+@pills-active-link-hover-bg:                    @component-active-bg;
+@pills-active-link-hover-color:                 @component-active-color;
+
+@tabs-justified-link-border-color:              @lighter5;
+@tabs-justified-active-link-border-color:       @body-bg;
+
+
+/* FONTS
+   ========================= */
+
+// Font family
+// -------------------------
+
+@font-family-sans:           "Helvetica Neue", Helvetica, Arial, sans-serif;
+@font-family-serif:           Georgia, Cambria, serif;
+@font-family-monospace:       Menlo, Monaco, Consolas, monospace;
+
+// Font sizes
+// -------------------------
+
+@font-size-normal:            14px;
+
+@font-size-large:             16px;
+@font-size-small:             13px;
+@font-size-xsmall:            12px;
+
+@font-size-h1:                30px;
+@font-size-h2:                24px;
+@font-size-h3:                22px;
+@font-size-h4:                13.5px;
+
+// Buttons
+
+@button-font-size-normal:     @font-size-normal;
+@button-font-size-large:      @font-size-large;
+@button-font-size-small:      @font-size-xsmall;
+
+// Hero
+
+@hero-font-size:              (@font-size-normal * 2.5);
+
+// Font weight
+// -------------------------
+
+@font-weight-light:           300;
+@font-weight-normal:          400;
+@font-weight-bold:            700;
+
+// Line height
+// -------------------------
+
+@line-height-normal:          1.5; // line-height: 21px
+
+@line-height-heading:         1.1667;
+@line-height-large:           1.3125;
+@line-height-small:           1.6154;
+@line-height-xsmall:          @line-height-large;
+
+@line-height-base:            21px;
+
+
+/* BOX SIZING
+   ========================= */
+
+// Padding
+// -------------------------
+
+@padding-normal-vertical:         12px;
+@padding-normal-horizontal:       23px;
+
+@padding-large-vertical:          16px;
+@padding-large-horizontal:        25px;
+
+@padding-small-vertical:          7px;
+@padding-small-horizontal:        15px;
+
+@breadcrumb-padding-vertical:     7px;
+@breadcrumb-padding-horizontal:   15px;
+
+@component-padding:               7px 15px;
+@nav-link-padding:                10px 15px;
+@hero-padding:                    30px;
+@message-padding:                 21px;
+@panel-body-padding:              15px;
+
+// Margins
+// -------------------------
+
+@component-margin:                15px;
+
+
+/* DIMENSIONS
+   ========================= */
+
+// Radius
+// -------------------------
+
+@border-radius-normal:            4px;
+@border-radius-large:             5px;
+@border-radius-small:             3px;
+
+@pills-border-radius:             @border-radius-normal;
+@message-border-radius:           @border-radius-normal;
+@panel-border-radius:             @border-radius-normal;
+@pager-border-radius:             (@border-radius-large * 3);
+
+// Width
+// -------------------------
+
+@caret-width-normal:              4px;
+@caret-width-large:               5px;
+
+// Height
+// -------------------------
+
+@pre-scrollable-max-height:       340px;
+
+// Offset
+// -------------------------
+
+@component-offset-horizontal:     180px;
+
+
+/* GRID SYSTEM
+   ========================= */
+
+@grid-columns:                    12;
+@grid-gutter-width:               30px;
+
+@grid-float-breakpoint:           @screen-sm;
+@grid-float-breakpoint-max:       (@grid-float-breakpoint - 1);
+
+
+/* MISCELLANEOUS
+   ========================= */
+
+@breadcrumb-separator:            ">";

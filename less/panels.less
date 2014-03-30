@@ -1,0 +1,148 @@
+/* PANELS
+   ========================= */
+
+.panel {
+  margin-bottom: @line-height-base;
+  border: 1px solid transparent;
+  border-radius: @panel-border-radius;
+  background-color: @panel-bg;
+}
+
+.panel-body {
+  .clearfix();
+  padding: @panel-body-padding;
+}
+
+// Panel lists
+// -------------------------
+
+.panel {
+  > .list-group {
+      margin-bottom: 0;
+      .list-group-item {
+        border-width: 1px 0;
+        border-radius: 0;
+        &:first-child {
+          border-top: 0;
+      }
+
+      &:last-child {
+        border-bottom: 0;
+      }
+    }
+
+    &:first-child {
+      .list-group-item:first-child {
+        .border-top-radius(@panel-border-radius - 1);
+      }
+    }
+
+    &:last-child {
+      .list-group-item:last-child {
+        .border-bottom-radius(@panel-border-radius - 1);
+      }
+    }
+  }
+}
+
+.panel-heading + .list-group {
+  .list-group-item:first-child {
+    border-top-width: 0;
+  }
+}
+
+// Accordian panels (collapsed)
+// -------------------------
+
+.panel-group {
+  margin-bottom: @line-height-base;
+
+  .panel {
+    overflow: hidden;
+    margin-bottom: 0;
+    border-radius: @panel-border-radius;
+    + .panel {
+      margin-top: 5px;
+    }
+  }
+
+  .panel-heading {
+    border-bottom: 0;
+      + .panel-collapse .panel-body {
+        border-top: 1px solid @panel-inner-border;
+    }
+  }
+  .panel-footer {
+    border-top: 0;
+      + .panel-collapse .panel-body {
+        border-bottom: 1px solid @panel-inner-border;
+    }
+  }
+}
+
+// Variants
+// -------------------------
+
+.panel-default  { .panel-variant(@panel-default-border; @panel-default-text; @panel-default-heading-bg; @panel-default-border); }
+.panel-gray     { .panel-variant(@panel-gray-border; @panel-gray-text; @panel-gray-heading-bg; @panel-gray-border); }
+.panel-green    { .panel-variant(@panel-green-border; @panel-green-text; @panel-green-heading-bg; @panel-green-border); }
+.panel-blue     { .panel-variant(@panel-blue-border; @panel-blue-text; @panel-blue-heading-bg; @panel-blue-border); }
+.panel-red      { .panel-variant(@panel-red-border; @panel-red-text; @panel-red-heading-bg; @panel-red-border); }
+
+
+// Example
+// -------------------------
+
+.example {
+  position: relative;
+  margin: 0 0 1em;
+  padding: 3em 1em 1em;
+  border-width: 1px;
+  border-style: solid;
+  border-color: @lighter5;
+  border-radius: @border-radius-large;
+  + .highlight {
+      margin: -1em -1em 1em;
+      border-width: 0 0 1px;
+      border-radius: @border-radius-large;
+  }
+
+  .container {
+      width: auto;
+  }
+
+  h1 {
+    margin-top: 0;
+  }
+
+  &:after {
+    position: absolute;
+    top:  0;
+    left: 0;
+    padding: .8em 1.2em;
+    color: darken(@lighter5, 10%);
+    content: "Example";
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: @font-weight-bold;
+    font-size: @font-size-xsmall;
+  }
+
+  &>p:last-child,
+  &>ul:last-child,
+  &>ol:last-child,
+  &>blockquote:last-child {
+    margin-bottom: 0;
+  }
+}
+
+@media (min-width: @screen-sm) {
+  .example + .highlight {
+    margin-top: -1.15em;
+    margin-right: 0;
+    margin-left: 0;
+    border-width: 1px;
+    border-bottom-right-radius: @border-radius-normal;
+    border-bottom-left-radius: @border-radius-normal;
+  }
+}

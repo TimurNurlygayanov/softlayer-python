@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  {% include head.html %}
+
+</head>
+<body>
+
+  {% include sidebar.html %}
+
+<div class="header"></div>
+<div class="sidebar-wrapper">
+<div class="container">
+<div class="row">
+
+<div class="col-lg-7 col-lg-7-offset-2 col-md-7 col-md-offset-1">
+  <h1 class="page-hero">{{page.intro}}</h1>
+
+    {{content}}
+
+</div>
+<div class="col-lg-3 col-md-3">
+<div class="subnav">
+  <ul class="nav subnav">
+
+    {% include partials/subnav.liquid %}
+
+  </ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+  <label for="sidebar-checkbox" class="sidebar-toggle gray"></label>
+  {% include partials/up.liquid %}
+
+<footer class="footer" role="contentinfo">
+<div class="footer-links">
+
+  {% include footer.html %}
+
+</div>
+</footer>
+
+  {% include partials/javascript.liquid %}
+  {% include partials/analytics.liquid %}
+
+</body>
+</html>

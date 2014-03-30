@@ -1,0 +1,88 @@
+/* =========================
+Lists
+========================= */
+
+.lists {
+  margin-bottom: 20px;
+  padding-left: 0;
+}
+
+// Individual items
+// -------------------------
+
+.lists-item {
+  position: relative;
+  display: block;
+  margin-bottom: -1px;
+  padding: 10px 15px;
+  border: 1px solid @lists-border;
+  background-color: @lists-bg;
+
+  &:first-child {
+    .border-top-radius(@border-radius-normal);
+  }
+
+  &:last-child {
+    .border-bottom-radius(@border-radius-normal);
+    margin-bottom: 0;
+  }
+
+  > .badge {
+    float: right;
+  }
+  > .badge + .badge {
+    margin-right: 5px;
+  }
+}
+
+// Linked items
+// -------------------------
+
+a.lists-item {
+  color: @lists-link-color;
+
+  .lists-item-heading {
+    color: @lists-link-heading-color;
+  }
+
+  &:hover,
+  &:focus {
+    background-color: @lists-hover-bg;
+    text-decoration: none;
+  }
+
+  &.active,
+  &.active:hover,
+  &.active:focus {
+    z-index: 2;
+    border-color: @lists-active-border;
+    background-color: @lists-active-bg;
+    color: @lists-active-color;
+
+    .lists-item-heading {
+      color: inherit;
+    }
+    .lists-item-text {
+      color: @lists-active-text-color;
+    }
+  }
+}
+
+// Contextual variants
+// -------------------------
+
+.lists-item-variant(@green; @white);
+.lists-item-variant(@blue; @white);
+.lists-item-variant(@red; @white);
+
+// Content options
+// -------------------------
+
+.lists-item-heading {
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+.lists-item-text {
+  margin-bottom: 0;
+  line-height: 1.3;
+}

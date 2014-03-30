@@ -47,8 +47,6 @@ With Markdown, you can add these common effects to your content:
 * [Underline](#toc_7)
 * [Delete (or strikethrough)](#toc_8)
 * [Superscript](#toc_9)
-* [Highlight](#toc_10)
-
 
 ## Bold
 

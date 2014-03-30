@@ -1,0 +1,228 @@
+/* NAV
+   ========================= */
+
+.nav {
+  .clearfix();
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style: none;
+
+  > li {
+    position: relative;
+    display: block;
+
+    > a {
+      position: relative;
+      display: block;
+      padding: @nav-link-padding;
+      &:hover,
+      &:focus {
+        background-color: @nav-link-hover-bg;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+// Tabs
+// -------------------------
+
+.tabs {
+  border-bottom: 1px solid @tabs-border-color;
+  > li {
+    float: left;
+    margin-bottom: -1px;
+
+    > a {
+      margin-right: 2px;
+      border: 1px solid transparent;
+      border-radius: @border-radius-normal @border-radius-normal 0 0;
+      line-height: @line-height-normal;
+      &:hover {
+        border-color: @tabs-link-hover-border-color @tabs-link-hover-border-color @tabs-border-color;
+      }
+    }
+
+    &.active > a {
+      &,
+      &:hover,
+      &:focus {
+        border: 1px solid @tabs-active-link-hover-border-color;
+        border-bottom-color: transparent;
+        background-color: @tabs-active-link-hover-bg;
+        color: @tabs-active-link-hover-color;
+        cursor: default;
+      }
+    }
+  }
+
+  &.justified {
+    .justified();
+    .tabs-justified();
+  }
+}
+
+// Pills
+// -------------------------
+
+.pills {
+  > li {
+    float: left;
+
+    > a {
+      border-radius: @pills-border-radius;
+    }
+    + li {
+      margin-left: 2px;
+    }
+
+    &.active > a {
+      &,
+      &:hover,
+      &:focus {
+        background-color: @pills-active-link-hover-bg;
+        color: @pills-active-link-hover-color;
+      }
+    }
+  }
+}
+
+// Stacked pills
+
+.stacked {
+  > li {
+    float: none;
+    + li {
+      margin-top: 2px;
+      margin-left: 0;
+    }
+  }
+}
+
+// Nav variations
+// -------------------------
+
+.justified {
+  width: 100%;
+
+  > li {
+    float: none;
+     > a {
+      margin-bottom: 5px;
+      text-align: center;
+    }
+  }
+
+  @media (min-width: @screen-sm) {
+    > li {
+      display: table-cell;
+      width: 1%;
+      > a {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+.tabs-justified {
+  border-bottom: 0;
+
+  > li > a {
+    margin-right: 0;
+    border-radius: @border-radius-normal;
+  }
+
+  > .active > a,
+  > .active > a:hover,
+  > .active > a:focus {
+    border: 1px solid @tabs-justified-link-border-color;
+  }
+
+  @media (min-width: @screen-sm) {
+    > li > a {
+      border-bottom: 1px solid @tabs-justified-link-border-color;
+      border-radius: @border-radius-normal @border-radius-normal 0 0;
+    }
+    > .active > a,
+    > .active > a:hover,
+    > .active > a:focus {
+      border-bottom-color: @tabs-justified-active-link-border-color;
+    }
+  }
+}
+
+// Tabbable tabs
+// -------------------------
+
+.tab-content {
+  > .tab-pane {
+    display: none;
+  }
+  > .active {
+    display: block;
+  }
+}
+
+// Scroll up
+// -------------------------
+
+.scroll-up {
+  opacity: .4;
+}
+
+a.scroll-up {
+  position: fixed;
+  right: 15px;
+  bottom: 0;
+  padding: 10px 12px;
+  -webkit-border-radius: 2px;
+  background-color: @gray;
+  color: @white;
+  text-decoration: none;
+  line-height: 0;
+  -webkit-transition: opacity 0.3s;
+}
+
+.scroll-up:hover {
+  opacity: 1;
+}
+
+// Subnav
+// -------------------------
+
+.subnav {
+  display: none;
+}
+
+@media (min-width: @screen-md) {
+  .subnav .nav > .active > ul {
+    display: block;
+  }
+
+  .subnav .nav & > li & > li {
+    padding: .4em;
+    font-size: @font-size-normal;
+
+    &:hover,
+    &:focus {
+      background: @subnav-hover-bg;
+      text-decoration: none;
+    }
+
+    > a {
+      color: @subnav-color;
+
+      &:hover,
+      &:focus {
+        color: @subnav-hover-color;
+      }
+    }
+  }
+
+  .subnav {
+    position: fixed;
+    display: block;
+    margin: 1.75em 0 0 3em;
+    width: 16em;
+  }
+}

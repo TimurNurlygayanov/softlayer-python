@@ -1,12 +1,6 @@
 {
-  "repo": "SoftLayer",
+  "name": "SoftLayer",
   "version": "0.0.1",
-  "author": "SoftLayer",
-  "licenses": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/softlayer"
-  },
   "devDependencies": {
     "grunt": "~0.4.2",
     "grunt-contrib-clean": "~0.5.0",

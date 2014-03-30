@@ -1,0 +1,20 @@
+<input class="sidebar-checkbox" id="sidebar-checkbox" type="checkbox">
+<div class="sidebar" id="sidebar">
+<nav class="sidebar-nav">
+
+  <p class="sidebar-header">{{site.project.name}}</p>
+
+  <a class="sidebar-nav-item{% if page.url == "/" %} active {% endif %}" href="{{page.baseurl}}"><i class="fa fa-home"></i>Home</a> <!-- Ensures that "Home" is always the first sidebar item -->
+
+  {% include partials/nav.liquid %}
+
+  <li class="divider"></li>
+  <a class="sidebar-nav-item" href="{{site.github.star}}"><i class="fa fa-star"></i>Star Our Repo</a>
+  <a class="sidebar-nav-item" href="{{site.github.fork}}"><i class="fa fa-code-fork"></i>Fork Our Repo</a>
+  <a class="sidebar-nav-item" href="//twitter.com/{{site.company.twitter}}"><i class="fa fa-twitter"></i>@{{site.company.twitter}}</a>
+
+  <li class="divider"></li>
+  <span class="sidebar-footer">© {{site.time | date: "%Y"}} {{site.company.name}}.</span>
+
+</nav>
+</div>

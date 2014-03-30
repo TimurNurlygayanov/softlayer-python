@@ -1,5 +1,5 @@
 {% comment %}
-  Creates menu links for any page with "layout: default" front-matter
+  Creates sidebar links for any page with "layout: default" front-matter
 {% endcomment %}
 
 {% assign nav-items = site.pages %}
@@ -7,7 +7,7 @@
   {% if node.header != null %}
     {% if node.layout == "default" %}
 
-    <a class="menu-nav-item{% if page.url == node.url %} active {% endif %}" href="{{site.baseurl}}{{node.url}}"><i class="fa fa-chevron-right"></i>{{node.header}}</a>
+    <a class="sidebar-nav-item{% if page.url == node.url %} active {% endif %}" href="{{site.baseurl}}{{node.url}}"><i class="fa fa-chevron-right"></i>{{node.header}}</a>
 
     {% endif %}
   {% endif %}

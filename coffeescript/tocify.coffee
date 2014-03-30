@@ -1,10 +1,10 @@
 #
 # * Tocify
-# * A ridiculously simple TOC generator for built-in page navigation
+# * A ridiculously simple TOC generator for built-in content navigation
 # *
 # * Copyright (c) 2014 SoftLayer, an IBM Company
 # * Released under the MIT license
-# *
+#
 
 (($) ->
   $.fn.tocify = (options) ->

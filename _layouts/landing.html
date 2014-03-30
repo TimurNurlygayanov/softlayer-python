@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  {% include head.html %}
+
+</head>
+<body>
+
+  {% include sidebar.html %}
+
+<div class="sidebar-wrapper">
+
+  {{content}}
+
+</div>
+
+  <label for="sidebar-checkbox" class="sidebar-toggle white"></label>
+  {% include partials/up.liquid %}
+
+<footer class="footer-3">
+
+  {% include footnote.html %}
+
+</footer>
+
+  {% include partials/javascript.liquid %}
+  {% include partials/analytics.liquid %}
+
+</body>
+</html>
