@@ -1,0 +1,77 @@
+/* LANDING
+   ========================= */
+
+.landing {
+    padding: 150px 0;
+    text-align: center;
+
+  &.hero {
+    display: table;
+    width: 100%;
+    height: auto;
+    background: transparent;
+    background-color: @black;
+    color: @white;
+    text-align: center;
+  }
+
+  @media (min-width: @screen-sm) {
+    &.hero {
+      height: 100%;
+      /*
+      background: -webkit-linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)), url('../public/images/landing-bg.jpg');
+      background: -moz-linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)), url('../public/images/landing-bg.jpg');
+      background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)), url('../public/images/landing-bg.jpg');
+      -webkit-background-size: cover;
+         -moz-background-size: cover;
+           -o-background-size: cover;
+              background-size: cover;
+      background-repeat: no-repeat;
+    }*/
+      background: @black;
+      background: -moz-linear-gradient(top, @lighter1, @black);
+      background: -webkit-linear-gradient(top, @lighter1, @black);
+      background: -ms-linear-gradient(top, @lighter1, @black);
+      background: -o-linear-gradient(top, @lighter1, @black);
+      background: linear-gradient(top, @lighter1, @black);
+    }
+  }
+
+  &.project {
+    background-color: @white;
+  }
+
+  &.banner {
+    background-color: @lighter8;
+  }
+
+  &.folio {
+    background-color: @lighter1;
+  }
+
+  &.learn-more {
+    padding: 50px 0;
+    background-color: @white;
+  }
+}
+
+// Headings
+// -------------------------
+
+.landing-project {
+  margin-top: 0;
+  color: @gray;
+  letter-spacing: -0.03em;
+  font-weight: @font-weight-light;
+  font-size: 37px;
+  line-height: 1.1;
+}
+
+.landing-header {
+  margin-top: 0;
+  color: @gray;
+  letter-spacing: -0.03em;
+  font-weight: @font-weight-light;
+  font-size: 35px;
+  line-height: 1.1;
+}

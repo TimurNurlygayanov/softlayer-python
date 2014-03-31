@@ -1,6 +1,6 @@
 #
-# * Suppress
-# * Squashes console errors in browsers that lack a console
+# * Conceal
+# * Suppresses console errors in browsers that lack a console
 # *
 # * Copyright (c) 2014 SoftLayer, an IBM Company
 # * Released under the MIT license

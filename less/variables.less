@@ -25,19 +25,19 @@
 @lighter8:                  #f4f4f4;
 @lighter7:                  #f0f0f0;
 @lighter6:                  #e4e4e4;
-@lighter5:                  #cccccb;
-@lighter4:                  #a6a9ad;
-@lighter3:                  #747c7f;
-@lighter2:                  #464a4c;
-@lighter1:                  #2e3133;
+@lighter5:                  #bdc3c7;
+@lighter4:                  #939da1;
+@lighter3:                  #747c7e;
+@lighter2:                  #464a4e;
+@lighter1:                  #2e3135;
 
-@black:                     #1f2123;
+@black:                     #1f2125;
 
 // Palette
 // -------------------------
 
 @default:                   @black;
-@gray:                      #81868c;
+@gray:                      #7f8c8d;
 @blue:                      #0e90d2;
 @green:                     #1abc9c;
 @red:                       #e74c3c;
@@ -92,7 +92,7 @@
 
 @subnav-color:              @lighter4;
 @subnav-hover-bg:           @lighter8;
-@subnav-hover-color:        @lighter4;
+@subnav-active-color:       @lighter2;
 
 // Buttons
 // -------------------------
@@ -248,7 +248,7 @@
 // Code
 // -------------------------
 
-@code-color:                #d44950;
+@code-color:                @gray; // #d44950
 @code-bg:                   @lighter9;
 @code-border:               @lighter7;
 
@@ -293,6 +293,7 @@
 // Font family
 // -------------------------
 
+@font-family-heading:        "jaf-bernino-sans", "Lucida Grande", "Lucida Sans Unicode", Verdana, sans-serif;
 @font-family-sans:           "Helvetica Neue", Helvetica, Arial, sans-serif;
 @font-family-serif:           Georgia, Cambria, serif;
 @font-family-monospace:       Menlo, Monaco, Consolas, monospace;
@@ -300,26 +301,29 @@
 // Font sizes
 // -------------------------
 
-@font-size-normal:            14px;
+@font-size-normal:            15px;
 
 @font-size-large:             16px;
+@font-size-medium:            13.5px;
 @font-size-small:             13px;
 @font-size-xsmall:            12px;
 
 @font-size-h1:                30px;
-@font-size-h2:                24px;
-@font-size-h3:                22px;
-@font-size-h4:                13.5px;
+@font-size-h2:                25px;
+@font-size-h3:                23px;
+@font-size-h4:                17px;
 
 // Buttons
 
-@button-font-size-normal:     @font-size-normal;
+@button-font-size-normal:     @font-size-medium;
 @button-font-size-large:      @font-size-large;
 @button-font-size-small:      @font-size-xsmall;
 
-// Hero
+// Miscellaneous
 
 @hero-font-size:              (@font-size-normal * 2.5);
+@blockquote-font-size:        17px;
+@nav-font-size:               13.5px;
 
 // Font weight
 // -------------------------
@@ -331,14 +335,14 @@
 // Line height
 // -------------------------
 
-@line-height-normal:          1.5; // line-height: 21px
+@line-height-normal:          1.466;
 
-@line-height-heading:         1.1667;
-@line-height-large:           1.3125;
-@line-height-small:           1.6154;
+@line-height-heading:         1.1;
+@line-height-large:           1.375;
+@line-height-small:           1.692;
 @line-height-xsmall:          @line-height-large;
 
-@line-height-base:            21px;
+@line-height-base:            22px;
 
 
 /* BOX SIZING
@@ -368,7 +372,7 @@
 // Margins
 // -------------------------
 
-@component-margin:                15px;
+@component-margin:                12px;
 
 
 /* DIMENSIONS

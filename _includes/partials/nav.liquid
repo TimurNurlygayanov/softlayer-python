@@ -1,4 +1,10 @@
 {% comment %}
+  Ensures that "Home" is always the first sidebar item
+{% endcomment %}
+
+<a class="sidebar-nav-item{% if page.url == "/" %} active {% endif %}" href="{{page.baseurl}}"><i class="fa fa-home"></i>Home</a>
+
+{% comment %}
   Creates sidebar links for any page with "layout: default" front-matter
 {% endcomment %}
 
@@ -7,7 +13,7 @@
   {% if node.header != null %}
     {% if node.layout == "default" %}
 
-    <a class="sidebar-nav-item{% if page.url == node.url %} active {% endif %}" href="{{site.baseurl}}{{node.url}}"><i class="fa fa-chevron-right"></i>{{node.header}}</a>
+<a class="sidebar-nav-item{% if page.url == node.url %} active {% endif %}" href="{{site.baseurl}}{{node.url}}"><i class="fa fa-chevron-right"></i>{{node.header}}</a>
 
     {% endif %}
   {% endif %}

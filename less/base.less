@@ -28,6 +28,10 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+p, h1, h2, h3, h4 {
+  text-rendering: optimizeLegibility;
+}
+
 button {
   font-size: inherit;
   font-family: inherit;
@@ -38,8 +42,7 @@ blockquote, q {
   quotes: none;
 }
 
-blockquote:before, blockquote:after,
-q:before, q:after {
+blockquote:before, blockquote:after, q:before, q:after {
   content: '';
   content: none;
 }
@@ -48,8 +51,9 @@ del {
   text-decoration: line-through;
 }
 
-pre {
-  word-wrap: break-word;
+li {
+  display: list-item;
+  text-align: -webkit-match-parent;
 }
 
 // Links

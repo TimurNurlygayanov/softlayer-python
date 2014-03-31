@@ -1,0 +1,40 @@
+/* HERO
+   ========================= */
+
+.hero {
+  margin-bottom: @hero-padding;
+  padding: @hero-padding;
+  background-color: @hero-bg;
+  color: @hero-color;
+
+  h1, .h1 {
+    color: @hero-heading-color;
+  }
+  p {
+    margin-bottom: (@hero-padding / 2);
+    font-weight: @font-weight-light;
+    font-size: @hero-font-size;
+  }
+
+  .container & {
+    border-radius: @border-radius-large;
+  }
+
+  .container {
+    max-width: 100%;
+  }
+
+  @media (min-width: @screen-sm) {
+    padding-top:    (@hero-padding * 1.6);
+    padding-bottom: (@hero-padding * 1.6);
+
+    .container & {
+      padding-right: (@hero-padding * 2);
+      padding-left:  (@hero-padding * 2);
+    }
+
+    h1, .h1 {
+      font-size: (@font-size-normal * 4.5);
+    }
+  }
+}

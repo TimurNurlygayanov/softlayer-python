@@ -167,14 +167,14 @@
 // -------------------------
 
 .scroll-up {
-  opacity: .4;
+  opacity: .2;
 }
 
 a.scroll-up {
   position: fixed;
   right: 15px;
-  bottom: 0;
-  padding: 10px 12px;
+  bottom: 15px;
+  padding: 8px;
   -webkit-border-radius: 2px;
   background-color: @gray;
   color: @white;
@@ -200,12 +200,11 @@ a.scroll-up {
   }
 
   .subnav .nav & > li & > li {
-    padding: .4em;
-    font-size: @font-size-normal;
+    padding: .3em;
+    font-size: @nav-font-size;
 
     &:hover,
     &:focus {
-      background: @subnav-hover-bg;
       text-decoration: none;
     }
 
@@ -213,8 +212,9 @@ a.scroll-up {
       color: @subnav-color;
 
       &:hover,
-      &:focus {
-        color: @subnav-hover-color;
+      &:focus,
+      &.active {
+        color: @subnav-active-color;
       }
     }
   }
@@ -222,7 +222,7 @@ a.scroll-up {
   .subnav {
     position: fixed;
     display: block;
-    margin: 1.75em 0 0 3em;
-    width: 16em;
+    width: 12em;
+    text-align: right;
   }
 }

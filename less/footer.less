@@ -1,0 +1,34 @@
+/* FOOTER
+   ========================= */
+
+.footer a:hover,
+.footer a:focus {
+  color: @footer-hover;
+}
+
+.footer {
+  margin-top: 3em;
+  padding: 42px 0;
+  border-top: 1px solid @footer-border;
+  background: transparent;
+  text-align: center;
+
+  a {
+    color: @footer-link;
+    font-weight: @font-weight-normal;
+    text-decoration: none;
+  }
+}
+
+.footer-links {
+  margin: -20px 0 0;
+  padding: 0 30px;
+  font-size: @font-size-normal;
+  cursor: pointer;
+}
+
+@media (min-width: @screen-xs) {
+  .footer-links {
+    padding: 0 65px 0 0;
+  }
+}

@@ -12,13 +12,13 @@
   position: fixed;
   top: 0;
   bottom: 0;
-  left: -14em;
+  left: -16em;
   visibility: hidden;
   overflow-y: auto;
-  width: 14em;
+  width: 16em;
   background-color: @sidebar-bg;
   color: @sidebar-color;
-  font-size: @font-size-normal;
+  font-size: @nav-font-size;
     -webkit-transition: all .3s ease-in-out;
             transition: all .3s ease-in-out;
   a {
@@ -65,11 +65,12 @@ a.sidebar-nav-item:focus {
   width: 1.5em;
   background-color: transparent;
   cursor: pointer;
-  font-size: 1.5em;
+  font-size: 1.6em;
   text-align: center;
   &.gray {
     color: @sidebar-toggle-gray;
   }
+
   &.white {
     color: @sidebar-toggle-white;
   }
@@ -122,18 +123,17 @@ a.sidebar-nav-item:focus {
   }
 
   ~ .sidebar-wrapper,
-  ~ .sidebar,
-  ~ .sidebar-toggle {
-      -webkit-transform: translateX(14em);
-          -ms-transform: translateX(14em);
-              transform: translateX(14em);
+  ~ .sidebar {
+      -webkit-transform: translateX(16em);
+          -ms-transform: translateX(16em);
+              transform: translateX(16em);
   }
-/*
+
   ~ .sidebar-toggle {
       -webkit-transform: translateX(11.5em);
           -ms-transform: translateX(11.5em);
               transform: translateX(11.5em);
-  }*/
+  }
 }
 
 @media (max-width: @screen-xs-max) {
@@ -146,13 +146,15 @@ a.sidebar-nav-item:focus {
   .sidebar-item {
     padding: 22px;
   }
-}
 
-@media (min-width: @screen-sm) {
   .sidebar {
   -webkit-backface-visibility: visible;
       -ms-backface-visibility: visible;
           backface-visibility: visible;
+  }
+
+  .sidebar-toggle {
+    position: fixed;
   }
 }
 

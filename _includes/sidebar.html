@@ -4,8 +4,6 @@
 
   <p class="sidebar-header">{{site.project.name}}</p>
 
-  <a class="sidebar-nav-item{% if page.url == "/" %} active {% endif %}" href="{{page.baseurl}}"><i class="fa fa-home"></i>Home</a> <!-- Ensures that "Home" is always the first sidebar item -->
-
   {% include partials/nav.liquid %}
 
   <li class="divider"></li>
@@ -14,7 +12,7 @@
   <a class="sidebar-nav-item" href="//twitter.com/{{site.company.twitter}}"><i class="fa fa-twitter"></i>@{{site.company.twitter}}</a>
 
   <li class="divider"></li>
-  <span class="sidebar-footer">© {{site.time | date: "%Y"}} {{site.company.name}}.</span>
+  <p class="sidebar-footer">© {{site.time | date: "%Y"}} {{site.company.name}}.</p>
 
 </nav>
 </div>

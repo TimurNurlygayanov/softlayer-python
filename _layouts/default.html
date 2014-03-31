@@ -15,12 +15,13 @@
 <div class="row">
 
 <div class="col-lg-7 col-lg-7-offset-2 col-md-7 col-md-offset-1">
-  <h1 class="page-hero">{{page.intro}}</h1>
+  <h1 class="page-header">{{page.header}}</h1>
+  <h1 class="page-intro">{{page.intro}}</h1>
 
     {{content}}
 
 </div>
-<div class="col-lg-3 col-md-3">
+<div class="col-lg-2 col-md-3">
 <div class="subnav">
   <ul class="nav subnav">
 
@@ -44,7 +45,7 @@
 </div>
 </footer>
 
-  {% include partials/javascript.liquid %}
+  {% include partials/js.liquid %}
   {% include partials/analytics.liquid %}
 
 </body>

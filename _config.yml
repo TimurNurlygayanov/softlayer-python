@@ -87,14 +87,12 @@ baseurl:          /softlayer-python
 permalink:        pretty
 exclude:          [ ".gitignore",
                     "Gemfile",
-                    "Gruntfile*",
-                    "coffee",
+                    "Gruntfile.coffee",
+                    "coffeescript",
                     "less",
-                    "LICENSE",
                     "node_modules",
                     "package.json",
-                    "Rakefile",
-                    "README.md"
+                    "Rakefile"
                   ]
 
 # ==============================
