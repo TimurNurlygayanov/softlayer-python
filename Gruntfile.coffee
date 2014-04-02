@@ -35,7 +35,7 @@ module.exports = (grunt) ->
       # Does some light cleaning before the party begins
       before: [
         "public/css/main*"
-        "public/javascript/main*"
+        "public/js/main*"
         "validation-*.json"
         "*.lock"
         "_www"
@@ -58,12 +58,13 @@ module.exports = (grunt) ->
         options:
           banner: "<%= banner %>"
         src: [
-          "<%= coffee.cache.dest %>suppress.js"
+          "<%= coffee.cache.dest %>patch.js"
           "<%= coffee.cache.dest %>folio.js"
           "<%= coffee.cache.dest %>metrics.js"
           "<%= coffee.cache.dest %>tocify.js"
+          "<%= coffee.cache.dest %>toggle.js"
         ]
-        dest: "public/javascript/main.js"
+        dest: "public/js/main.js"
 
     # Now we're flattening Javascript
     uglify:
@@ -72,7 +73,7 @@ module.exports = (grunt) ->
         report: "min"
       build:
         src: "<%= concat.build.dest %>"
-        dest: "public/javascript/main.js"
+        dest: "public/js/main.js"
 
     # Rounds up all the Less morsels to make one big CSS cookie
     recess:

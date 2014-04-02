@@ -1,31 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+---
+layout: default
+---
 
-  {% include head.html %}
+{{content}}
 
-</head>
-<body>
-
-  {% include sidebar.html %}
-
-<div class="sidebar-wrapper">
-
-  {{content}}
-
-</div>
-
-  <label for="sidebar-checkbox" class="sidebar-toggle white"></label>
-  {% include partials/up.liquid %}
+<label for="sidebar-checkbox" class="sidebar-toggle white"></label>
+  {% include tags/up.liquid %}
 
 <footer class="footer-3">
-
   {% include footnote.html %}
-
 </footer>
-
-  {% include partials/js.liquid %}
-  {% include partials/analytics.liquid %}
-
-</body>
-</html>

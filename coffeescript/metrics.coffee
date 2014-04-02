@@ -44,3 +44,12 @@ $.ajax
     stampString = month[stamp.getMonth()] + " " + stamp.getDate()
     $("#json-pushed").text stampString
     return
+
+# Fetch last pegged tag
+$.ajax
+  url: "https://api.github.com/repos/softlayer/softlayer-python/tags?callback?"
+  dataType: "jsonp"
+  success: (json) ->
+    lastTag = json.data[0]
+    $("#json-tag").text lastTag.name
+    return

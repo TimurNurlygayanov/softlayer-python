@@ -48,14 +48,12 @@ github:
   milestones:     http://github.com/softlayer/softlayer-python/issues/milestones?state=open
 
 # ==============================
-# API Callbacks (GitHub)
+# API (GitHub)
 # ==============================
 
-ajax:
+api:
   milestones:     https://api.github.com/repos/softlayer/softlayer-python/milestones?state=closed/callback?
   commits:        https://api.github.com/repos/softlayer/softlayer-python/commits?state=closed/callback?
-
-json:
   contributors:   https://api.github.com/repos/softlayer/softlayer-python/contributors?callback=?
   repos:          https://api.github.com/orgs/softlayer/repos?callback=?
   members:        https://api.github.com/orgs/softlayer/members?callback=?

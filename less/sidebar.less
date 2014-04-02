@@ -1,41 +1,70 @@
 /* SIDEBAR
    ========================= */
 
-.sidebar-wrapper {
-  left: 0;
-  right: auto;
-  position: relative;
-  width: 100%;
-}
-
-.sidebar {
+#sidebar-wrapper {
   position: fixed;
   top: 0;
-  bottom: 0;
-  left: -16em;
-  visibility: hidden;
+  left: 0;
+  z-index: 1000;
   overflow-y: auto;
+  margin-left: -16em;
   width: 16em;
+  height: 100%;
   background-color: @sidebar-bg;
   color: @sidebar-color;
   font-size: @nav-font-size;
-    -webkit-transition: all .3s ease-in-out;
-            transition: all .3s ease-in-out;
+  font-family: @font-family-sans;
+  -webkit-transition: all .6s ease 0;
+     -moz-transition: all .6s ease 0;
+      -ms-transition: all .6s ease 0;
+       -o-transition: all .6s ease 0;
+          transition: all .6s ease 0;
   a {
     color: @lighter7;
   }
 }
 
-.sidebar-nav {
-  padding-top: 38px;
+#sidebar-wrapper.active {
+  left: 16em;
+  width: 16em;
+  -webkit-transition: all .6s ease 0;
+     -moz-transition: all .6s ease 0;
+      -ms-transition: all .6s ease 0;
+       -o-transition: all .6s ease 0;
+          transition: all .6s ease 0;
 }
 
-.sidebar-item {
-  padding: 16px;
+#sidebar-toggle {
+  position: fixed;
+  top: 14px;
+  left: 12px;
+  display: block;
+  width: 1.5em;
+  background-color: transparent;
+  text-align: center;
+  font-size: 1.75em;
+  opacity: .7;
+  cursor: pointer;
+}
 
-  p:last-child {
-    margin-bottom: 0;
-  }
+#sidebar-toggle:after {
+  display: block;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 100%;
+  content:"\f0c9";
+  font-family: FontAwesome;
+}
+
+#sidebar-button:before {
+  display: block;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 100%;
+  content:"\f0c9";
+  font-family: FontAwesome;
 }
 
 .sidebar-nav-item {
@@ -53,130 +82,45 @@ a.sidebar-nav-item:focus {
   text-decoration: none;
 }
 
-.sidebar-checkbox {
-  display: none;
-}
-
-.sidebar-toggle {
+.sidebar-nav {
   position: absolute;
-  left: 12px;
-  top: 14px;
-  display: block;
-  width: 1.5em;
-  background-color: transparent;
-  cursor: pointer;
-  font-size: 1.6em;
-  text-align: center;
-  &.gray {
-    color: @sidebar-toggle-gray;
-  }
-
-  &.white {
-    color: @sidebar-toggle-white;
-  }
+  top: 0;
+  margin: 0;
+  padding-top: 54px;
+  width: 16em;
+  list-style: none;
 }
 
-.sidebar-toggle:hover,
-.sidebar-toggle:focus {
-  background-color: transparent;
-}
-
-.sidebar-toggle:before {
-  display: block;
-  width: 100%;
-  content:"\f0c9";
-  font-family: FontAwesome;
-    -webkit-box-sizing: border-box;
-       -moz-box-sizing: border-box;
-            box-sizing: border-box;
-}
-
-.sidebar-toggle:active {
-  background-color: transparent;
-  &.gray {
-    color: @sidebar-toggle-gray;
-  }
-
-  &.white {
-    color: @sidebar-toggle-white;
+.sidebar-item {
+  padding: 16px;
+  p:last-child {
+    margin-bottom: 0;
   }
 }
-
-.sidebar-wrapper,
-.sidebar,
-.sidebar-toggle {
-  -webkit-backface-visibility: hidden;
-      -ms-backface-visibility: hidden;
-          backface-visibility: hidden;
-}
-
-.sidebar-wrapper,
-.sidebar,
-.sidebar-toggle {
-  -webkit-transition: -webkit-transform .3s ease-in-out;
-          transition: transform .3s ease-in-out;
-}
-
-#sidebar-checkbox:checked {
-  + .sidebar {
-    visibility: visible;
-  }
-
-  ~ .sidebar-wrapper,
-  ~ .sidebar {
-      -webkit-transform: translateX(16em);
-          -ms-transform: translateX(16em);
-              transform: translateX(16em);
-  }
-
-  ~ .sidebar-toggle {
-      -webkit-transform: translateX(11.5em);
-          -ms-transform: translateX(11.5em);
-              transform: translateX(11.5em);
-  }
-}
-
-@media (max-width: @screen-xs-max) {
-  .sidebar {
-    font-size: @font-size-small;
-  }
-}
-
-@media (min-width: @screen-sm) {
-  .sidebar-item {
-    padding: 22px;
-  }
-
-  .sidebar {
-  -webkit-backface-visibility: visible;
-      -ms-backface-visibility: visible;
-          backface-visibility: visible;
-  }
-
-  .sidebar-toggle {
-    position: fixed;
-  }
-}
-
-// Header / footer
-// -------------------------
 
 .sidebar-header {
-  margin-bottom: 5px;
+  margin-bottom: 0;
   margin-left: 17px;
   font-weight: @font-weight-bold;
-  font-size: @font-size-large;
+  font-size: 20px;
 }
 
-.sidebar-footer {
-  padding: @component-padding;
+.sidebar-footer,
+.sidebar-version {
+  display: block;
+  margin: 0;
   color: @lighter3;
   word-break: break-word;
-  display: block;
+  line-height: @line-height-xsmall;
 }
 
-// Divider
-// -------------------------
+.sidebar-footer  {
+  padding: 7px 15px 0;
+}
+
+.sidebar-version {
+  padding: 0 15px 7px;
+}
 
 .divider {
   .nav-divider(@sidebar-divider);

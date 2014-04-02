@@ -2,7 +2,7 @@
    ========================= */
 
 .header {
-  margin-bottom: 6em;
+  margin-bottom: 7em;
 }
 
 @media (min-width: @screen-sm) {
@@ -20,7 +20,7 @@
   letter-spacing: -0.05em;
   font-weight: @font-weight-bold;
   font-family: @font-family-heading;
-  font-size: 46px;
+  font-size: 39px;
   line-height: @line-height-heading;
 }
 
@@ -30,6 +30,16 @@
   letter-spacing: -0.02em;
   font-weight: @font-weight-light;
   font-family: @font-family-heading;
-  font-size: 33px;
+  font-size: 27px;
   line-height: @line-height-heading;
+}
+
+@media (min-width: @screen-sm) {
+  .page-header {
+    font-size: 45px;
+  }
+
+  .page-intro {
+    font-size: 33px;
+  }
 }

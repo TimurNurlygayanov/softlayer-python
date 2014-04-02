@@ -45,24 +45,17 @@
             weightForWatchers = 1.314 * Math.pow(10, 7)
             repo.hotness = weightForPush * Math.pow(Math.E, -1 * weekHalfLife * pushDelta)
             repo.hotness += weightForWatchers * repo.watchers / createdDelta
-            return
 
           repos.sort (a, b) -> # Sort by highest # of watchers
             return 1  if a.hotness < b.hotness
             return -1  if b.hotness < a.hotness
-            0
 
           $.each repos, (i, repo) ->
             addRepo repo
-            return
 
           repos.sort (a, b) -> # Sort by most-recently pushed to
             return 1  if a.pushed_at < b.pushed_at
             return -1  if b.pushed_at < a.pushed_at
-            0
-            return
-            return
-            return
 
   # Drop in any repo names & URL's here if it's not listed under your organization
   repoUrls = "": ""
@@ -78,16 +71,12 @@
     $ ->
       $("#json-members").text members.length
       return
-      return
-      return
 
   # Number of contributors
   $.getJSON "https://api.github.com/repos/softlayer/jumpgate/contributors?callback=?", (result) ->
     sponsors = result.data
     $ ->
-      $("#json-sponsors").text sponsors.length
-      return
-      return
+      $("#json-contributors").text sponsors.length
       return
 
 ) jQuery

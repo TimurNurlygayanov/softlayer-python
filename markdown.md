@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: pages
 header: Markdown
 intro: Get out of writing fancy code with this editor-agnostic language
 baseurl: "../"

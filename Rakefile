@@ -22,7 +22,7 @@ task :new do
   puts "We're done baking your new #{filename} page. Hope you like it."
   open(filename, "w") do |post|
     post.puts "---"
-    post.puts "layout: default"
+    post.puts "layout: page"
     post.puts "header: #{header}"
     post.puts "intro: ""Add something catchy to describe this page"
     post.puts "baseurl: \"../\""

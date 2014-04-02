@@ -1,10 +1,12 @@
-<input class="sidebar-checkbox" id="sidebar-checkbox" type="checkbox">
-<div class="sidebar" id="sidebar">
+<div id="sidebar-wrapper">
 <nav class="sidebar-nav">
 
+  <a id="sidebar-toggle" href="#"></a>
   <p class="sidebar-header">{{site.project.name}}</p>
+  <p class="sidebar-version">Currently <span id="json-tag"><i class="fa fa-spinner fa-spin"></i></span></p>
+  <li class="divider"></li>
 
-  {% include partials/nav.liquid %}
+  {% include tags/items.liquid %}
 
   <li class="divider"></li>
   <a class="sidebar-nav-item" href="{{site.github.star}}"><i class="fa fa-star"></i>Star Our Repo</a>
@@ -12,7 +14,7 @@
   <a class="sidebar-nav-item" href="//twitter.com/{{site.company.twitter}}"><i class="fa fa-twitter"></i>@{{site.company.twitter}}</a>
 
   <li class="divider"></li>
-  <p class="sidebar-footer">© {{site.time | date: "%Y"}} {{site.company.name}}.</p>
+  <p class="sidebar-footer"> © {{site.time | date: "%Y"}} {{site.company.name}}</p>
 
 </nav>
 </div>

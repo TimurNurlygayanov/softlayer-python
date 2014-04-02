@@ -1,5 +1,5 @@
 {% comment %}
-  Bootstraps jQuery's CDN and loads local JS files
+Bootstraps jQuery's CDN and loads local JS files
 {% endcomment %}
 
 <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
@@ -7,10 +7,10 @@
 <script type="text/javascript" src="{{page.baseurl}}public/js/main.js"></script>
 
 {% comment %}
-  Generates the sidenav's table of contents for pages with "layout: default" front-matter
+Generates the sidenav's table of contents for pages with "layout: page" front-matter
 {% endcomment %}
 
-{% if layout == default %}
+{% if layout == pages %}
 
 <script type="text/javascript">
   $(document).ready(function() {

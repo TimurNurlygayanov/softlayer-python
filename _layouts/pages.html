@@ -1,0 +1,36 @@
+---
+layout: default
+---
+
+<div class="header"></div>
+<div class="container">
+<div class="row">
+
+<div class="col-lg-7 col-lg-7-offset-2 col-md-7 col-md-offset-1">
+  <h1 class="page-header">{{page.header}}</h1>
+  <h1 class="page-intro">{{page.intro}}</h1>
+
+    {{content}}
+
+</div>
+<div class="col-lg-2 col-md-3">
+<div class="subnav">
+  <ul class="nav subnav">
+
+    {% include tags/subnav.liquid %}
+
+  </ul>
+</div>
+</div>
+</div>
+</div>
+
+  {% include tags/up.liquid %}
+
+<footer class="footer" role="contentinfo">
+<div class="footer-links">
+
+  {% include footer.html %}
+
+</div>
+</footer>
