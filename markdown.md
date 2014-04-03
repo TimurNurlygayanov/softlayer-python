@@ -7,19 +7,24 @@ baseurl: "../"
 
 # Introduction
 
-Markdown is a simple, humanistic way to write web content without complex coding. You still write as you always have, only now you drop in a few simple symbols that will magically transform your work into HTML. This means, you can put all your effort into writing great content without the hassle of learning fancy code.
+Markdown is a simple, humanistic way to write web content without coding. You still write content like you always have, only now you drop in a few symbols that magically transforms it into HTML. This means, you can put all your effort into writing great content without the hassle of learning fancy code.
 
 ## Redcarpet
 
-Another definition for Markdown is [syntactic sugar](http://en.wikipedia.org/wiki/Syntactic_sugar) --- a *language* designed to make things easier to voice or read. It is not HTML, nor does it create HTML pages. Something else transforms it stealthily into HTML. That something is [Redcarpet](http://github.com/vmg/redcarpet).
+Another definition for Markdown is [syntactic sugar](http://en.wikipedia.org/wiki/Syntactic_sugar) --- a language designed to make things easier to voice or read. It is not HTML, nor does it create HTML pages. Something else is responsible for transforming it stealthily into HTML. That something is [Redcarpet](http://github.com/vmg/redcarpet).
 
-In short, Redcarpet runs your content through the ringer and spits out stylized HTML pages. And since it doesn't mess with your original content, you never have to touch HTML --- Redcarpet will automatically create a new page any time you update your content.
+In short, Redcarpet runs your content through the ringer and spits out stylized HTML pages. And since it doesn't mess with your original content, you never have to touch HTML --- Redcarpet automatically creates new HTML pages after you make updates to your Markdown content.
 
-Now that you're acquainted with the inner-workings, let's get to the stuff you came here for.
+## In the wild
+
+This page was written using Markdown (except for the `<section>` and `<pre>` blocks). If you see something you want to use, or just want to see how Markdown looks in the wild, check out the [raw Markdown version on GitHub](https://raw.githubusercontent.com/softlayer/softlayer-python/gh-pages/markdown.md).
+
 
 # Paragraphs
 
-Paragraphs are the simplest part of Markdown. They do not require any symbols. And just like with Microsoft Word or Google Docs, you create paragraphs by writing one or more lines of content and separating them with blank lines.
+Now that you're acquainted with the inner-workings, let's get to the stuff you came here for --- starting with paragraphs.
+
+These are the simplest part of Markdown because they don't require symbols. Just like with Microsoft Word or Google Docs, you create paragraphs by writing one or more lines of content and separating them with blank lines.
 
 <pre>
 Lorem ipsum is simply dummy text of the printing and typesetting industry.
@@ -36,6 +41,7 @@ Lorem ipsum has been the industry's standard dummy text ever since the 1500s.
 
 Contrary to popular belief, Lorem ipsum is not random text.
 </section>
+
 
 # Text-level Semantics
 
@@ -119,6 +125,7 @@ Lorem ipsum^[1] is simply dummy text of the printing and typesetting industry^[C
 <section class="example">
 Lorem ipsum^[1] is simply dummy text of the printing and typesetting industry^[Citation ^needed].
 </section>
+
 
 # Punctuation
 
@@ -215,7 +222,7 @@ Tell Markdown what you want to be a heading and how big you want it by using has
 
 ## Setext styles
 
-Instead of using hashtags, setext (underlined) styles for h1 and h2 headings are available. Put at least three equal signs `===` under your content to make h1 headings and three (or more) dashes `---` to make h2 headings.
+Instead of using hashtags, setext styles for h1 and h2 headings are available. Put at least three equal signs `===` under your content to make h1 headings and three (or more) dashes `---` to make h2 headings.
 
 <pre>
 h1. Heading 1
@@ -224,6 +231,7 @@ h1. Heading 1
 h2. Heading 2
 ---
 </pre>
+
 
 # Lists
 
@@ -265,7 +273,7 @@ Make a bullet list by placing either a star `*`, a hyphen `-`, or a plus `+` bef
 
 ## Number and bullet lists
 
-This markdown shows how to combine both lists. Notice the indents before the ordered and unordered sub items. Use at least two spaces to make that indentation.
+This example shows how to combine both lists. Notice the indents before the sub items. Use at least two spaces to make that indentation.
 
 <pre>
 1. First number list item
@@ -286,7 +294,7 @@ This markdown shows how to combine both lists. Notice the indents before the ord
 
 # Links
 
-Linking parts of your content is very simple in Markdown. All you have to do is put the word(s) you want to highlight in brackets `[]` and the link in parenthesis `()` next to it.
+Creating a link is very simple with Markdown. All you have to do is put the word(s) you want to highlight in brackets `[]` and the link in parenthesis `()` next to it.
 
 <pre>
 [Visit our website](http://www.softlayer.com)
@@ -316,6 +324,7 @@ Visit our website at <http://www.softlayer.com>
 
 Email <howdy@softlayer.com> to get a quote
 </section>
+
 
 # Images
 
@@ -547,6 +556,7 @@ Still | looks | snazzy
 Tall | Grande | Venti
 Titan | Europa | Enceladus
 </section>
+
 
 # Videos
 
