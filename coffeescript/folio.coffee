@@ -74,9 +74,9 @@
 
   # Number of contributors
   $.getJSON "https://api.github.com/repos/softlayer/jumpgate/contributors?callback=?", (result) ->
-    sponsors = result.data
+    contributors = result.data
     $ ->
-      $("#json-contributors").text sponsors.length
+      $("#json-contributors").text contributors.length
       return
 
 ) jQuery
