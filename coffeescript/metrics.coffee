@@ -6,6 +6,12 @@
 # * Released under the MIT license
 #
 
+# Reads in the site configuration file to inject API urls
+
+config = require("config-file")
+config.npmLoad "foo", ".whatever.yml.",
+  parse: "yaml"
+
 month = [
   "Jan"
   "Feb"
@@ -23,7 +29,7 @@ month = [
 
 # Fetch date and title from last milestone in a "closed" state
 $.ajax
-  url: "https://api.github.com/repos/softlayer/jumpgate/milestones?state=closed/callback?"
+  url: "https://api.github.com/repos/softlayer/softlayer-python/milestones?state=closed/callback?"
   dataType: "jsonp"
   success: (json) ->
     lastMilestone = json.data[0]
@@ -31,19 +37,16 @@ $.ajax
     stampString = month[stamp.getMonth()] + " " + stamp.getDate()
     $("#json-closed").text stampString
     $("#json-milestone").text lastMilestone.title
-    return
-
 
 # Fetch date from last commit record in a "closed" state
 $.ajax
-  url: "https://api.github.com/repos/softlayer/jumpgate/commits?state=closed/callback?"
+  url: "https://api.github.com/repos/softlayer/softlayer-python/commits?state=closed/callback?"
   dataType: "jsonp"
   success: (json) ->
     lastCommit = json.data[0]
     stamp = new Date(lastCommit.commit.committer.date)
     stampString = month[stamp.getMonth()] + " " + stamp.getDate()
     $("#json-pushed").text stampString
-    return
 
 # Fetch last pegged tag
 $.ajax
@@ -52,4 +55,3 @@ $.ajax
   success: (json) ->
     lastTag = json.data[0]
     $("#json-tag").text lastTag.name
-    return

@@ -58,7 +58,6 @@ module.exports = (grunt) ->
         options:
           banner: "<%= banner %>"
         src: [
-          "<%= coffee.cache.dest %>patch.js"
           "<%= coffee.cache.dest %>folio.js"
           "<%= coffee.cache.dest %>metrics.js"
           "<%= coffee.cache.dest %>tocify.js"
@@ -162,7 +161,7 @@ module.exports = (grunt) ->
   ]
 
   grunt.registerTask "serve:pretty", [
-    "build-uncompressed"
+    "build:pretty"
     "jekyll:preview"
   ]
 
