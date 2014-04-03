@@ -1,6 +1,6 @@
 #
 # * Toggle
-# * Enables and animates toggling for the sidebar (drawer) menu
+# * Enables and animates toggling for the sidebar menu
 # *
 # * Copyright (c) 2014 SoftLayer, an IBM Company
 # * Released under the MIT license
