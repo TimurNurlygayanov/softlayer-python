@@ -38,7 +38,7 @@ module.exports = (grunt) ->
         "public/js/main*"
         "validation-*.json"
         "*.lock"
-        "_www"
+        "_site"
       ]
       # And cleans up once the party is over
       after: ["coffeescript/.jscache"]
@@ -117,8 +117,8 @@ module.exports = (grunt) ->
 
       files:
         src: [
-          "_www/*.html"
-          "_www/**/*.html"
+          "_site/*.html"
+          "_site/**/*.html"
         ]
   }
 

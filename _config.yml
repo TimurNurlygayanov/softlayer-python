@@ -80,7 +80,6 @@ redcarpet:
 # Server
 # ==============================
 
-destination:      _www
 baseurl:          /softlayer-python
 permalink:        pretty
 exclude:          [ ".gitignore",
