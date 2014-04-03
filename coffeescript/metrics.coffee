@@ -6,12 +6,6 @@
 # * Released under the MIT license
 #
 
-# Reads in the site configuration file to inject API urls
-
-config = require("config-file")
-config.npmLoad "foo", ".whatever.yml.",
-  parse: "yaml"
-
 month = [
   "Jan"
   "Feb"
