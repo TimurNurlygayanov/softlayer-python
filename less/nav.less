@@ -167,19 +167,20 @@
 // -------------------------
 
 #scroll-up {
-  opacity: .2;
-}
-
-#scroll-up a {
   position: fixed;
+  top: calc(100% / 1.0504);
+  top: -moz-calc(100% / 1.0504);
+  top: -o-calc(100% / 1.0504);
   right: 15px;
   bottom: 15px;
+  visibility: hidden;
   padding: 8px;
-  -webkit-border-radius: 2px;
+  border-radius: 2px;
   background-color: @gray;
   color: @white;
   text-decoration: none;
   line-height: 0;
+  opacity: .5;
   -webkit-transition: opacity 0.3s;
 }
 
@@ -269,6 +270,7 @@
   left: 12px;
   display: block;
   width: 1.5em;
+  color: @lighter7;
   background-color: transparent;
   text-align: center;
   font-size: 1.75em;
@@ -276,8 +278,13 @@
   cursor: pointer;
 }
 
+a#sidebar-toggle {
+  color: @lighter7;
+}
+
 #sidebar-toggle:after {
   display: block;
+  color: @lighter7;
   -webkit-box-sizing: border-box;
      -moz-box-sizing: border-box;
           box-sizing: border-box;
@@ -288,6 +295,7 @@
 
 #sidebar-button:before {
   display: block;
+  color: @lighter7;
   -webkit-box-sizing: border-box;
      -moz-box-sizing: border-box;
           box-sizing: border-box;
