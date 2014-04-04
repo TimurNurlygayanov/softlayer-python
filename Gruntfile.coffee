@@ -14,7 +14,7 @@ module.exports = (grunt) ->
     banner: "/*!\n" +
             " * \n" +
             " * <%= site.project.name %>\n" +
-            " * Version <%= site.project.version %>, Built on <%= grunt.template.today(\"mm-dd-yyyy\") %>\n" +
+            " * Boilerplate version <%= site.project.version %>, Built on <%= grunt.template.today(\"mm-dd-yyyy\") %>\n" +
             " * Copyright (c) <%= grunt.template.today(\"yyyy\") %> <%= site.company.name %>. All rights reserved.\n" +
             " * Code and documentation licensed under <%= site.license.type %>.\n" +
             " * \n" +
