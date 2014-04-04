@@ -1,5 +1,5 @@
-{% if page.header == {{site.project.name}} %}
-  {{page.header}} &ndash; {{site.project.tagline}}
+{% if page.header == null %}
+  {{site.project.name}} &ndash; {{site.project.tagline}}
 {% else %}
   {{page.header}} &ndash; {{site.project.name}}
 {% endif %}
