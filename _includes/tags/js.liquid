@@ -1,15 +1,12 @@
-{% comment %}
-Bootstrap jQuery from Google's CDN (with a local fallback) and loads local JS files
-{% endcomment %}
+<!-- Bootstrap jQuery from Google's CDN (with a local fallback) and loads local JS files -->
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="{{page.baseurl}}public/js/jquery-1.11.0.min.js"><\/script>')</script>
 <script type="text/javascript" src="{{page.baseurl}}public/js/modernizr.js"></script>
 <script type="text/javascript" src="{{page.baseurl}}public/js/main.js"></script>
 
-{% comment %}
-Generates the subnav's table of contents for pages with "layout: pages" front-matter
-{% endcomment %}
+
+<!-- Generates the subnav's table of contents for pages with "layout: pages" front-matter -->
 
 {% if layout == pages %}
 
