@@ -1,27 +1,25 @@
-/* SECTIONS
+/* PARTIALS
    ========================= */
 
-.landing {
+.partial {
     padding: 150px 0;
-    text-align: center;
+    -webkit-transition: opacity 500ms ease-out;
 
-  &.callout {
+  &.hero {
     display: table;
     width: 100%;
     height: auto;
-    background: transparent;
     background-color: @black;
     color: @white;
-    text-align: center;
   }
 
   @media (min-width: @screen-sm) {
-    &.callout {
+    &.hero {
       height: 100%;
       /*
-      background: -webkit-linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)), url('../public/images/callout-bg.jpg');
-      background: -moz-linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)), url('../public/images/callout-bg.jpg');
-      background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)), url('../public/images/callout-bg.jpg');
+      background: -webkit-linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)), url('../public/images/hero-bg.jpg');
+      background: -moz-linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)), url('../public/images/hero-bg.jpg');
+      background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)), url('../public/images/hero-bg.jpg');
       -webkit-background-size: cover;
          -moz-background-size: cover;
            -o-background-size: cover;
@@ -39,10 +37,12 @@
 
   &.about {
     background-color: @white;
+    text-align: center;
   }
 
   &.metrics {
     background-color: @lighter8;
+    text-align: center;
   }
 
   &.folio {
@@ -52,28 +52,27 @@
   &.learn-more {
     padding: 50px 0;
     background-color: @white;
+    text-align: center;
   }
 }
 
-// Callout
+// hero
 // -------------------------
 
-.callout-intro {
-  margin: 1.25em 0 30px;
+.hero-name {
+  margin-top: 1.2em;
   color: @white;
-  font-weight: @font-weight-normal;
-  font-size: 54px;
-  line-height: 1;
-  z-index: 2;
+  font-weight: @font-weight-light;
+  line-height: @line-height-large;
+  font-size: 64px;
 }
 
-.callout-tagline {
-  margin-top: 0;
+.hero-tagline {
+  margin-top: 10px;
   color: @gray;
-  letter-spacing: -0.03em;
   font-weight: @font-weight-light;
-  font-size: 30px;
-  line-height: 45px;
+  font-size: 26px;
+  line-height: 32px;
 }
 
 // Metrics

@@ -1,0 +1,40 @@
+/* CALLOUT
+   ========================= */
+
+.callout {
+  margin-bottom: @callout-padding;
+  padding: @callout-padding;
+  background-color: @callout-bg;
+  color: @callout-color;
+
+  h1, .h1 {
+    color: @callout-heading-color;
+  }
+  p {
+    margin-bottom: (@callout-padding / 2);
+    font-weight: @font-weight-light;
+    font-size: @callout-font-size;
+  }
+
+  .container & {
+    border-radius: @border-radius-large;
+  }
+
+  .container {
+    max-width: 100%;
+  }
+
+  @media (min-width: @screen-sm) {
+    padding-top:    (@callout-padding * 1.6);
+    padding-bottom: (@callout-padding * 1.6);
+
+    .container & {
+      padding-right: (@callout-padding * 2);
+      padding-left:  (@callout-padding * 2);
+    }
+
+    h1, .h1 {
+      font-size: (@font-size-normal * 4.5);
+    }
+  }
+}
