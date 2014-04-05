@@ -7,8 +7,7 @@ node_modules/
 Desktop.ini
 Thumbs.db
 Gemfile.lock
-validation-report.json
-validation-status.json
+validation-*.json
 
 # File extensions
 .config
