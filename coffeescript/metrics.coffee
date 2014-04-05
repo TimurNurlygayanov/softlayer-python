@@ -29,8 +29,8 @@ $.ajax
     lastMilestone = json.data[0]
     stamp = new Date(lastMilestone.updated_at)
     stampString = month[stamp.getMonth()] + " " + stamp.getDate()
-    $("#json-closed").text stampString
-    $("#json-milestone").text lastMilestone.title
+    $("#gh-milestone-date").text stampString
+    $("#gh-milestone-name").text lastMilestone.title
 
 # Fetch date from last commit record in a "closed" state
 $.ajax
@@ -40,7 +40,7 @@ $.ajax
     lastCommit = json.data[0]
     stamp = new Date(lastCommit.commit.committer.date)
     stampString = month[stamp.getMonth()] + " " + stamp.getDate()
-    $("#json-pushed").text stampString
+    $("#gh-commit-date").text stampString
 
 # Fetch last pegged tag
 $.ajax
@@ -48,4 +48,4 @@ $.ajax
   dataType: "jsonp"
   success: (json) ->
     lastTag = json.data[0]
-    $("#json-tag").text lastTag.name
+    $("#gh-tag-name").text lastTag.name
