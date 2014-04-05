@@ -73,7 +73,7 @@
       return
 
   # Number of contributors
-  $.getJSON "https://api.github.com/repos/softlayer/jumpgate/contributors?callback=?", (result) ->
+  $.getJSON "https://api.github.com/repos/softlayer/softlayer-python/contributors?callback=?", (result) ->
     contributors = result.data
     $ ->
       $("#json-contributors").text contributors.length
