@@ -1,6 +1,6 @@
 #
-# * Swap
-# * Patterns for converting Liquid templating to Handlebars
+# * Harden
+# * Replacement patterns for turning Liquid into Handlebars (wax)
 # *
 # * Copyright (c) 2014 SoftLayer, an IBM Company
 # * Released under the MIT license
