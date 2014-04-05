@@ -7,6 +7,7 @@
 #
 
 module.exports = (grunt) ->
+  replace = require("frep")
 
   grunt.initConfig {
     pkg: grunt.file.readJSON("package.json")
