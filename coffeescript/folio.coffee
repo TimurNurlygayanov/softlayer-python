@@ -33,7 +33,7 @@
         addRepos repos, page + 1
       else
         $ ->
-          $("#json-repos").text repos.length
+          $("#gh-repos").text repos.length
           $.each repos, (i, repo) ->
 
             # converts pushed_at to Date
@@ -69,14 +69,14 @@
   $.getJSON "https://api.github.com/orgs/softlayer/members?callback=?", (result) ->
     members = result.data
     $ ->
-      $("#json-members").text members.length
+      $("#gh-members-total").text members.length
       return
 
   # Number of contributors
   $.getJSON "https://api.github.com/repos/softlayer/softlayer-python/contributors?callback=?", (result) ->
     contributors = result.data
     $ ->
-      $("#json-contributors").text contributors.length
+      $("#gh-contributors-total").text contributors.length
       return
 
 ) jQuery
