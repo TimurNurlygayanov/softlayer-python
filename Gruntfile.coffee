@@ -42,7 +42,7 @@ module.exports = (grunt) ->
         "_site"
       ]
       # And cleans up once the party is over
-      after: ["coffeescript/.jscache"]
+      after: ["coffeescript/.cache"]
 
     # Cooks CoffeeScript until it's a nice, golden JavaScript and drops it into a temp directory
     coffee:
@@ -50,7 +50,7 @@ module.exports = (grunt) ->
         expand: true
         cwd: "coffeescript/"
         src: ["*.coffee"]
-        dest: "coffeescript/.jscache/"
+        dest: "coffeescript/.cache/"
         ext: ".js"
 
     # Pounds on Javascript until it becomes one file
