@@ -26,7 +26,7 @@
   addRepos = (repos, page) ->
     repos = repos or []
     page = page or 1
-    uri = "//api.github.com/orgs/softlayer/repos?callback=?"
+    uri = "https://api.github.com/orgs/softlayer/repos?callback=?"
     $.getJSON uri, (result) ->
       if result.data and result.data.length > 0
         repos = repos.concat(result.data)
