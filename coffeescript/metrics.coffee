@@ -23,7 +23,7 @@ month = [
 
 # Fetch date and title from last milestone in a "closed" state
 $.ajax
-  url: "api.github.com/repos/softlayer/softlayer-python/milestones?state=closed/callback?"
+  url: "https://api.github.com/repos/softlayer/softlayer-python/milestones?state=closed/callback?"
   dataType: "jsonp"
   success: (json) ->
     lastMilestone = json.data[0]
@@ -34,7 +34,7 @@ $.ajax
 
 # Fetch date from last commit record in a "closed" state
 $.ajax
-  url: "api.github.com/repos/softlayer/softlayer-python/commits?state=closed/callback?"
+  url: "https://api.github.com/repos/softlayer/softlayer-python/commits?state=closed/callback?"
   dataType: "jsonp"
   success: (json) ->
     lastCommit = json.data[0]
@@ -44,7 +44,7 @@ $.ajax
 
 # Fetch last pegged tag
 $.ajax
-  url: "api.github.com/repos/softlayer/softlayer-python/tags?callback?"
+  url: "https://api.github.com/repos/softlayer/softlayer-python/tags?callback?"
   dataType: "jsonp"
   success: (json) ->
     lastTag = json.data[0]
