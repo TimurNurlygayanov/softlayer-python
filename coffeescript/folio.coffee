@@ -26,7 +26,7 @@
   addRepos = (repos, page) ->
     repos = repos or []
     page = page or 1
-    uri = "https://api.github.com/orgs/softlayer/repos?callback=?" + "&per_page=50" + "&page=" + page
+    uri = "api.github.com/orgs/softlayer/repos?callback=?"
     $.getJSON uri, (result) ->
       if result.data and result.data.length > 0
         repos = repos.concat(result.data)
@@ -66,14 +66,14 @@
   addRepos()
 
   # Number of team members
-  $.getJSON "https://api.github.com/orgs/softlayer/members?callback=?", (result) ->
+  $.getJSON "api.github.com/orgs/softlayer/members?callback=?", (result) ->
     members = result.data
     $ ->
       $("#gh-members-total").text members.length
       return
 
   # Number of contributors
-  $.getJSON "https://api.github.com/repos/softlayer/softlayer-python/contributors?callback=?", (result) ->
+  $.getJSON "api.github.com/repos/softlayer/softlayer-python/contributors?callback=?", (result) ->
     contributors = result.data
     $ ->
       $("#gh-contributors-total").text contributors.length
