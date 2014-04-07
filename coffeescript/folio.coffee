@@ -6,8 +6,7 @@
 # * Released under the MIT license
 #
 
-(($, undefined_) ->
-
+(($) ->
   repoUrl = (repo) ->
     repoUrls[repo.name] or repo.html_url
 
@@ -39,23 +38,25 @@
             # converts pushed_at to Date
             repo.pushed_at = new Date(repo.pushed_at)
             weekHalfLife = 1.146 * Math.pow(10, -9)
-            pushDelta = (new Date) - Date.parse(repo.pushed_at)
-            createdDelta = (new Date) - Date.parse(repo.created_at)
+            pushDelta = ("new Date") - Date.parse(repo.pushed_at)
+            createdDelta = ("new Date") - Date.parse(repo.created_at)
             weightForPush = 1
             weightForWatchers = 1.314 * Math.pow(10, 7)
             repo.hotness = weightForPush * Math.pow(Math.E, -1 * weekHalfLife * pushDelta)
             repo.hotness += weightForWatchers * repo.watchers / createdDelta
 
-          repos.sort (a, b) -> # Sort by highest # of watchers
+          repos.sort (a, b) ->  # Sort by highest # of watchers
             return 1  if a.hotness < b.hotness
-            return -1  if b.hotness < a.hotness
+            -1  if b.hotness < a.hotness
 
           $.each repos, (i, repo) ->
             addRepo repo
 
-          repos.sort (a, b) -> # Sort by most-recently pushed to
+          repos.sort (a, b) ->  # Sorts by most-recently pushed to
             return 1  if a.pushed_at < b.pushed_at
-            return -1  if b.pushed_at < a.pushed_at
+            -1  if b.pushed_at < a.pushed_at
+
+
 
   # Drop in any repo names & URL's here if it's not listed under your organization
   repoUrls = "": ""

@@ -37,7 +37,6 @@ module.exports = (grunt) ->
       before: [
         "public/css/main*"
         "public/js/main*"
-        "coffeescript/.config"
         "validation-*.json"
         "*.lock"
         "_site"
@@ -160,7 +159,6 @@ module.exports = (grunt) ->
     "concat"
     "uglify"
     "recess:minify"
-    "clean:after"
   ]
 
   grunt.registerTask "build:pretty", [
@@ -169,7 +167,6 @@ module.exports = (grunt) ->
     "coffee"
     "concat"
     "recess:unminify"
-    "clean:after"
   ]
 
   grunt.registerTask "install", [

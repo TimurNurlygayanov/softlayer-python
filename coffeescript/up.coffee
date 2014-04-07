@@ -7,7 +7,6 @@
 #
 
 pageOffset = document.documentElement.scrollTop or document.body.scrollTop
-
 scrollTo = (element, to, duration) ->
   start = element.scrollTop
   change = to - start
@@ -22,21 +21,19 @@ scrollTo = (element, to, duration) ->
 
   animateScroll()
   return
+
 window.onscroll = ->
   if pageYOffset >= 200
     document.getElementById("scroll-up").style.visibility = "visible"
   else
     document.getElementById("scroll-up").style.visibility = "hidden"
+    return
+  document.getElementById("scroll-up").onclick = ->
+    scrollTo document.body, 0, 0
+    return
+
   return
 
-document.getElementById("scroll-up").onclick = ->
-  scrollTo document.body, 0, 0
-  return
-
-#t = current time
-#b = start value
-#c = change in value
-#d = duration
 Math.easeInOutQuad = (t, b, c, d) ->
   t /= d / 2
   return c / 2 * t * t + b  if t < 1
