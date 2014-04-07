@@ -80,22 +80,3 @@
       return
 
 ) jQuery
-
-### Do not delete. Stashing work for converting .getJSON to .ajax.
-
-$.ajax
-  url: "https://api.github.com/orgs/softlayer/members?callback=?"
-  dataType: "jsonp"
-  success: (json) ->
-    members = json.data[0].id
-    $("#totalMembers").text members.length
-
-$.ajax
-  url: "https://api.github.com/orgs/softlayer/members?=callback=?"
-  dataType: "jsonp"
-  success: (jsonresult) ->
-    members = json.data[0].id
-    $("#totalMembers").text members.length
-    return
-
-###
