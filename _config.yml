@@ -32,6 +32,7 @@ company:
 license:
   type:           MIT
   www:            http://github.com/softlayer/softlayer-python/blob/master/LICENSE
+  typekit:        lzt3exy  # this only prevents Google fonts from loading for SoftLayer-owned sites
 
 # ==============================
 # GitHub
