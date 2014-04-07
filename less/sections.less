@@ -1,22 +1,43 @@
-/* SECTIONS
+/* Sections
    ========================= */
 
 .partial {
   -webkit-transition: opacity .6s ease-out;
+}
 
-  &.hero {
-    padding: 50px;
-    display: table;
-    width: 100%;
-    height: auto;
-    background-color: @black;
-    color: @white;
-  }
+// Hero
+// -------------------------
 
-  @media (min-width: @screen-sm) {
-    &.hero {
-      height: 100%;
-      padding: 150px 0;
+.hero {
+  padding: 30px 0;
+  display: table;
+  width: 100%;
+  height: auto;
+  background-color: @black;
+  color: @white;
+}
+
+.hero-name {
+  margin: 0;
+  color: @white;
+  font-weight: @font-weight-bold;
+  line-height: 1.2352;
+  font-size: 51px;
+  letter-spacing: -.04em;
+}
+
+.hero-tagline {
+  margin: 2px 0 22px;
+  color: @gray;
+  font-weight: @font-weight-light;
+  font-size: 33px;
+  line-height: 1.24;
+}
+
+@media (min-width: @screen-sm) {
+  .hero {
+    height: 100%;
+    padding: 250px 0;
       /*
       background: -webkit-linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)), url('../public/images/hero-bg.jpg');
       background: -moz-linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)), url('../public/images/hero-bg.jpg');
@@ -27,52 +48,36 @@
               background-size: cover;
       background-repeat: no-repeat;
     }*/
-      background: @black;
-      background: -moz-linear-gradient(top, @lighter1, @black);
-      background: -webkit-linear-gradient(top, @lighter1, @black);
-      background: -ms-linear-gradient(top, @lighter1, @black);
-      background: -o-linear-gradient(top, @lighter1, @black);
-      background: linear-gradient(top, @lighter1, @black);
-    }
+    background: @black;
+    background: -moz-linear-gradient(top, @lighter1, @black);
+    background: -webkit-linear-gradient(top, @lighter1, @black);
+    background: -ms-linear-gradient(top, @lighter1, @black);
+    background: -o-linear-gradient(top, @lighter1, @black);
+    background: linear-gradient(top, @lighter1, @black);
   }
+}
 
-  &.about {
+// About
+// -------------------------
+
+
+.about {
     padding: 150px 0;
     background-color: @white;
     text-align: center;
   }
 
-  &.metrics {
+.metrics {
     padding: 150px 0;
     background-color: @lighter9;
     text-align: center;
   }
 
-  &.learn-more {
+.learn-more {
     padding: 50px 0;
     background-color: @white;
     text-align: center;
   }
-}
-
-// Hero
-// -------------------------
-
-.hero-name {
-  margin: 0;
-  color: @white;
-  font-weight: @font-weight-bold;
-  line-height: 1;
-  font-size: 54px;
-}
-
-.hero-tagline {
-  margin: 10px 0 20px;
-  color: @gray;
-  font-weight: @font-weight-light;
-  font-size: 31px;
-  line-height: @line-height-heading;
-}
 
 // Metrics
 // -------------------------
