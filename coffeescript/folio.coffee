@@ -19,14 +19,14 @@
     $link.append $("<h3>").text(repo.name)
     $link.append $("<p>").text(repoDescription(repo))
     $link.append $("<h4>").text(repo.language)
-    $item.appendTo "#content-repos"
+    $item.appendTo "#repos"
     return
 
   addRepos = (repos, page) ->
     uri = undefined
     repos = repos or []
     page = page or 1
-    uri = "https://api.github.com/orgs/softlayer/repos?callback=?"
+    uri = "https://api.github.com/orgs/softlayer/repos?callback=?" + "&per_page=40" + "&page=" + page
     $.getJSON uri, (result) ->
 
       if result.data and result.data.length > 0
@@ -35,7 +35,7 @@
 
       else
         $ ->
-          $("#repos").text repos.length
+          $("#content-repos").text repos.length
           $.each repos, (i, repo) ->
             createdDelta = undefined
             pushDelta = undefined
