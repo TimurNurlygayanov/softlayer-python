@@ -2,10 +2,10 @@
    ========================= */
 
 .partial {
-    padding: 150px 0;
-    -webkit-transition: opacity 500ms ease-out;
+  -webkit-transition: opacity .6s ease-out;
 
   &.hero {
+    padding: 50px;
     display: table;
     width: 100%;
     height: auto;
@@ -16,6 +16,7 @@
   @media (min-width: @screen-sm) {
     &.hero {
       height: 100%;
+      padding: 150px 0;
       /*
       background: -webkit-linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)), url('../public/images/hero-bg.jpg');
       background: -moz-linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)), url('../public/images/hero-bg.jpg');
@@ -36,17 +37,15 @@
   }
 
   &.about {
+    padding: 150px 0;
     background-color: @white;
     text-align: center;
   }
 
   &.metrics {
+    padding: 150px 0;
     background-color: @lighter9;
     text-align: center;
-  }
-
-  &.folio {
-    background-color: @lighter1;
   }
 
   &.learn-more {
@@ -56,15 +55,15 @@
   }
 }
 
-// hero
+// Hero
 // -------------------------
 
 .hero-name {
-  margin: 1em 0 0;
+  margin: 0;
   color: @white;
-  font-weight: @font-weight-light;
+  font-weight: @font-weight-bold;
   line-height: 1;
-  font-size: 60px;
+  font-size: 54px;
 }
 
 .hero-tagline {

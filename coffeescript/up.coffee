@@ -1,6 +1,6 @@
 #
-# * Bookends
-# * Provides parallax-scrollability for up/down buttons
+# * Up
+# * Shows and hides scrollability back to top
 # *
 # * Copyright (c) 2014 SoftLayer, an IBM Company
 # * Released under the MIT license
@@ -32,7 +32,6 @@ window.onscroll = ->
 document.getElementById("scroll-up").onclick = ->
   scrollTo document.body, 0, 0
   return
-
 
 #t = current time
 #b = start value
