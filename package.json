@@ -14,6 +14,7 @@
     "grunt-jekyll": "~0.4.1",
     "grunt-recess": "~0.6.0",
     "grunt-shell": "~0.6.4",
+    "grunt-yaml": "~0.4.0",
     "frep": "~0.2.0"
   }
 }

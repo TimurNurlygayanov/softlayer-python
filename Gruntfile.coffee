@@ -37,6 +37,7 @@ module.exports = (grunt) ->
       before: [
         "public/css/main*"
         "public/js/main*"
+        "coffeescript/.config"
         "validation-*.json"
         "*.lock"
         "_site"
@@ -121,6 +122,25 @@ module.exports = (grunt) ->
           "_site/*.html"
           "_site/**/*.html"
         ]
+
+    yaml:
+      config:
+        options:
+          space: 4
+          customTypes:
+            "!include scalar": (value, yamlLoader) ->
+              yamlLoader value
+
+            "!max sequence": (values) ->
+              Math.max.apply null, values
+
+            "!extend mapping": (value, yamlLoader) ->
+              _.extend yamlLoader(value.basePath), value.partial
+
+        files: [
+          src: ["./_config.yml"]
+          dest: "coffeescript/.config/config.json"
+        ]
   }
 
   grunt.loadNpmTasks "grunt-contrib-clean"
@@ -131,9 +151,11 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks "grunt-jekyll"
   grunt.loadNpmTasks "grunt-recess"
   grunt.loadNpmTasks "grunt-shell"
+  grunt.loadNpmTasks "grunt-yaml"
 
   grunt.registerTask "build", [
     "clean:before"
+    "yaml"
     "coffee"
     "concat"
     "uglify"
@@ -143,6 +165,7 @@ module.exports = (grunt) ->
 
   grunt.registerTask "build:pretty", [
     "clean:before"
+    "yaml"
     "coffee"
     "concat"
     "recess:unminify"
