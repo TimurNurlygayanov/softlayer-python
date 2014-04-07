@@ -36,6 +36,10 @@
   &.solid {
     .solid-button-variant(@solid-btn-default-color; @solid-btn-default-bg; @solid-btn-default-border);
   }
+
+  &.pill {
+    .pill-button-variant(@pill-btn-default-color; @pill-btn-default-bg; @pill-btn-default-border);
+  }
 }
 
 // Normal variants
@@ -53,15 +57,16 @@
 .solid-green {.solid-button-variant(@solid-btn-green-color; @solid-btn-green-bg; @solid-btn-green-border);}
 .solid-blue  {.solid-button-variant(@solid-btn-blue-color; @solid-btn-blue-bg; @solid-btn-blue-border);}
 
-// Button sizes
-// -------------------------
+// Pill variants
 
-.large {.button-size(@padding-large-vertical; @padding-large-horizontal; @button-font-size-large; @line-height-large; @border-radius-large);
-  letter-spacing: 2px;
-}
+.pill       {.pill-button-variant(@pill-btn-default-color; @pill-btn-default-bg; @pill-btn-default-border);}
+.pill-gray  {.pill-button-variant(@pill-btn-gray-color; @pill-btn-gray-bg; @pill-btn-gray-border);}
+.pill-red   {.pill-button-variant(@pill-btn-red-color; @pill-btn-red-bg; @pill-btn-red-border);}
+.pill-green {.pill-button-variant(@pill-btn-green-color; @pill-btn-green-bg; @pill-btn-green-border);}
+.pill-blue  {.pill-button-variant(@pill-btn-blue-color; @pill-btn-blue-bg; @pill-btn-blue-border);}
 
-.small {.button-size(@padding-small-vertical; @padding-small-horizontal; @button-font-size-small; @line-height-small; @border-radius-small);
-  letter-spacing: 2px;
+.pill, .pill-gray, .pill-red, .pill-green, .pill-blue {
+  border-radius: 999em;
 }
 
 // Circle
@@ -123,4 +128,15 @@
     padding: 18px;
     width: 13.5em;
   }
+}
+
+// Button sizes
+// -------------------------
+
+.large {.button-size(@padding-large-vertical; @padding-large-horizontal; @button-font-size-large; @line-height-large; @border-radius-large);
+  letter-spacing: 2px;
+}
+
+.small {.button-size(@padding-small-vertical; @padding-small-horizontal; @button-font-size-small; @line-height-small; @border-radius-small);
+  letter-spacing: 2px;
 }

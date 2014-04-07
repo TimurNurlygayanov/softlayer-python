@@ -29,18 +29,17 @@ $.ajax
     lastMilestone = json.data[0]
     stamp = new Date(lastMilestone.updated_at)
     stampString = month[stamp.getMonth()] + " " + stamp.getDate()
-    $("#gh-milestone-date").text stampString
-    $("#gh-milestone-name").text lastMilestone.title
+    $("#date-milestones").text stampString
+    $("#title-milestones").text lastMilestone.title
 
 # Fetch date from last commit record in a "closed" state
 $.ajax
   url: "https://api.github.com/repos/softlayer/softlayer-python/commits?state=closed/callback?"
   dataType: "jsonp"
   success: (json) ->
-    lastCommit = json.data[0]
     stamp = new Date(lastCommit.commit.committer.date)
     stampString = month[stamp.getMonth()] + " " + stamp.getDate()
-    $("#gh-commit-date").text stampString
+    $("#date-commits").text stampString
 
 # Fetch last pegged tag
 $.ajax
@@ -48,4 +47,4 @@ $.ajax
   dataType: "jsonp"
   success: (json) ->
     lastTag = json.data[0]
-    $("#gh-tag-name").text lastTag.name
+    $("#version-tags").text lastTag.name

@@ -316,6 +316,24 @@
   }
 }
 
+.pill-button-variant(@color; @background; @border) {
+  color: @color;
+  background-color: @background;
+  border-color: @border;
+  &:hover,
+  &:focus,
+  &:active,
+  &.active {
+    color: @color;
+    background-color: @background;
+        border-color: @border;
+  }
+  &:active,
+  &.active {
+    background-image: none;
+  }
+}
+
 // Button sizes
 // -------------------------
 
