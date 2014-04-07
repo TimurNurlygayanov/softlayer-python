@@ -19,4 +19,4 @@ $("#sidebar-toggle").click (e) ->
 $("#sidebar-button").click (e) ->
   e.preventDefault()
   $("#sidebar-wrapper").toggleClass "active"
-return
+  return

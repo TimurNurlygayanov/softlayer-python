@@ -45,14 +45,16 @@
             repo.hotness = weightForPush * Math.pow(Math.E, -1 * weekHalfLife * pushDelta)
             repo.hotness += weightForWatchers * repo.watchers / createdDelta
 
-          repos.sort (a, b) ->  # Sort by highest # of watchers
+          # Sort by highest # of watchers
+          repos.sort (a, b) ->
             return 1  if a.hotness < b.hotness
             -1  if b.hotness < a.hotness
 
           $.each repos, (i, repo) ->
             addRepo repo
 
-          repos.sort (a, b) ->  # Sorts by most-recently pushed to
+          # Sorts by most-recently pushed to
+          repos.sort (a, b) ->
             return 1  if a.pushed_at < b.pushed_at
             -1  if b.pushed_at < a.pushed_at
 

@@ -7,6 +7,7 @@
 #
 
 pageOffset = document.documentElement.scrollTop or document.body.scrollTop
+
 scrollTo = (element, to, duration) ->
   start = element.scrollTop
   change = to - start
