@@ -1,0 +1,16 @@
+###
+WORK IN PROGRESS
+###
+
+# Numbers for stargazers, watchers, and forks
+$.ajax
+  url: "https://api.github.com/repos/softlayer/softlayer-python?callback?"
+  dataType: "jsonp"
+  success: (json) ->
+    countStargazers = json.data[0]
+    countWatchers = json.data[0]
+    countForks = json.data[0]
+
+    $("#num-stargazers").text countStargazers.stargazers_count
+    $("#num-watchers").text countWatchers.subscribers_count
+    $("#num-forks").text countWatchers.forks_count
