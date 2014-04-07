@@ -1,6 +1,10 @@
 {
   "name": "SoftLayer",
   "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/softlayer/softlayer-python.git"
+  },
   "devDependencies": {
     "grunt-contrib-clean": "~0.5.0",
     "grunt-contrib-coffee": "~0.10.1",
