@@ -7,24 +7,24 @@ baseurl: "../"
 
 # Introduction
 
-Markdown is a simple, humanistic way to write web content without coding. You still write content like you always have, only now you drop in a few symbols that magically transforms it into HTML. This means, you can put all your effort into writing great content without the hassle of learning fancy code.
+Markdown is a simple, humanistic way to write web content without coding. You still write content like you always have, only now you drop in a few symbols that magically transforms it into HTML. This means, you can put all your effort into writing great content without the hassle of using fancy code.
 
 ## Redcarpet
 
 Another definition for Markdown is [syntactic sugar](http://en.wikipedia.org/wiki/Syntactic_sugar) --- a language designed to make things easier to voice or read. It is not HTML, nor does it create HTML pages. Something else is responsible for transforming it stealthily into HTML. That something is [Redcarpet](http://github.com/vmg/redcarpet).
 
-In short, Redcarpet runs your content through the ringer and spits out stylized HTML pages. And since it doesn't mess with your original content, you never have to touch HTML --- Redcarpet automatically creates new HTML pages after you make updates to your Markdown content.
+In short, Redcarpet runs your content through the ringer and spits out stylized HTML pages. And since it doesn't mess with your original content, you never have to touch HTML --- Redcarpet automatically creates new HTML pages whenever you make updates to your Markdown content.
 
 ## In the wild
 
-This page was written using Markdown (except for the `<section>` and `<pre>` blocks). If you see something you want to use, or just want to see how Markdown looks in the wild, check out the [raw Markdown version on GitHub](https://raw.githubusercontent.com/softlayer/softlayer-python/gh-pages/markdown.md).
+Except for the `<section>` and `<pre>` blocks, this page was written in Markdown. If you see something you like, or are just interested in observing how Markdown behaves in the wild, check out the [raw Markdown version on GitHub](http://raw.githubusercontent.com/softlayer/softlayer-python/gh-pages/markdown.md).
 
 
 # Paragraphs
 
 Now that you're acquainted with the inner-workings, let's get to the stuff you came here for --- starting with paragraphs.
 
-These are the simplest part of Markdown because they don't require symbols. Just like with Microsoft Word or Google Docs, you create paragraphs by writing one or more lines of content and separating them with blank lines.
+Similar to Pages, Google Docs, and Word, you create paragraphs by writing one or more lines of content and separating them with blank lines. This is arguably the simplest form of writing in Markdown because it doesn't require any symbols.
 
 <pre>
 Lorem ipsum is simply dummy text of the printing and typesetting industry.
@@ -194,7 +194,7 @@ ___
 
 # Blockquotes
 
-Make a blockquote by putting a greater-than angle bracket `>` before the content.
+Make a blockquote by putting a **greater-than** angle bracket `>` before the content.
 
 <pre>
 > Blockquotes are very handy to emulate content for quotes.
@@ -222,7 +222,7 @@ Tell Markdown what you want to be a heading and how big you want it by using has
 
 ## Setext styles
 
-Instead of using hashtags, setext styles for h1 and h2 headings are available. Put at least three equal signs `===` under your content to make h1 headings and three (or more) dashes `---` to make h2 headings.
+Instead of using hashtags, setext styles for h1 and h2 headings are available. Put at least three equal signs `===` under your content to make h1 headings and three dashes `---` to make h2 headings.
 
 <pre>
 h1. Heading 1
@@ -273,7 +273,7 @@ Make a bullet list by placing either a star `*`, a hyphen `-`, or a plus `+` bef
 
 ## Number and bullet lists
 
-This example shows how to combine both lists. Notice the indents before the sub items. Use at least two spaces to make that indentation.
+This example shows how to combine both lists. Notice the indents before the sub items. Use two spaces to make that indentation.
 
 <pre>
 1. First number list item
