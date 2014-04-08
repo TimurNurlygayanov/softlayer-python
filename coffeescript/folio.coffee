@@ -67,5 +67,4 @@
   repoDescriptions = "": ""
 
   addRepos()
-
 ) jQuery
