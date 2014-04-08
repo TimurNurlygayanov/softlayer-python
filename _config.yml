@@ -32,7 +32,6 @@ company:
 license:
   type:           MIT
   www:            http://github.com/softlayer/softlayer-python/blob/master/LICENSE
-  typekit:        lzt3exy  # this only prevents Google fonts from loading for SoftLayer-owned sites
 
 # ==============================
 # GitHub
@@ -55,9 +54,9 @@ github:
 api:
   milestones:     https://api.github.com/repos/softlayer/softlayer-python/milestones?state=closed/callback?
   commits:        https://api.github.com/repos/softlayer/softlayer-python/commits?state=closed/callback?
-  contributors:   https://api.github.com/repos/softlayer/softlayer-python/contributors?callback=?  # Insert = before the "callback=?" parameter to view in browser
-  repos:          https://api.github.com/orgs/softlayer/repos?callback=?  # Insert = before the "callback=?" parameter to view in browser
-  members:        https://api.github.com/orgs/softlayer/members?callback=?  # Insert = before the "callback=?" parameter to view in browser
+  contributors:   https://api.github.com/repos/softlayer/softlayer-python/contributors?callback=?
+  repos:          https://api.github.com/orgs/softlayer/repos?callback=?
+  members:        https://api.github.com/orgs/softlayer/members?callback=?
 
 # ==============================
 # Markdown

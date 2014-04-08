@@ -125,7 +125,7 @@ module.exports = (grunt) ->
     yaml:
       config:
         options:
-          space: 4
+          space: 2
           customTypes:
             "!include scalar": (value, yamlLoader) ->
               yamlLoader value

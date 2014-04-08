@@ -67,4 +67,18 @@
   repoDescriptions = "": ""
 
   addRepos()
+
+  # Number of team members
+  $.getJSON "https://api.github.com/orgs/softlayer/members?callback=?", (result) ->
+    members = result.data
+    $ ->
+      $("#num-members").text members.length
+      return
+
+  # Number of contributors
+  $.getJSON "https://api.github.com/repos/softlayer/softlayer-python/contributors?callback=?", (result) ->
+    contributors = result.data
+    $ ->
+      $("#num-contributors").text contributors.length
+      return
 ) jQuery
