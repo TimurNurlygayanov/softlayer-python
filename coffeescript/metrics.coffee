@@ -68,5 +68,4 @@
     $ ->
       $("#num-contributors").text contributors.length
       return
-
 ) jquery
