@@ -138,7 +138,7 @@ module.exports = (grunt) ->
 
         files: [
           src: ["./_config.yml"]
-          dest: "coffeescript/config.json"
+          dest: "public/js/config.json"
         ]
   }
 

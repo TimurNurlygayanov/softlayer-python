@@ -52,11 +52,15 @@ github:
 # ==============================
 
 api:
-  milestones:     https://api.github.com/repos/softlayer/softlayer-python/milestones?state=closed/callback?
   commits:        https://api.github.com/repos/softlayer/softlayer-python/commits?state=closed/callback?
   contributors:   https://api.github.com/repos/softlayer/softlayer-python/contributors?callback=?
-  repos:          https://api.github.com/orgs/softlayer/repos?callback=?
   members:        https://api.github.com/orgs/softlayer/members?callback=?
+  milestones:     https://api.github.com/repos/softlayer/softlayer-python/milestones?state=closed/callback?
+  pulls:          https://api.github.com/repos/softlayer/softlayer-python/pulls?callback=?
+  repos:          https://api.github.com/orgs/softlayer/repos?callback=?
+  stargazers:     https://api.github.com/repos/softlayer/softlayer-python/stargazers?callback=?
+  tags:           https://api.github.com/repos/softlayer/softlayer-python/tags?callback?
+  watchers:       https://api.github.com/repos/softlayer/softlayer-python/subscribers?callback=?
 
 # ==============================
 # Markdown
