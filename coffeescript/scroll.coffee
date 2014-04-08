@@ -1,6 +1,6 @@
 #
-# * Up
-# * Shows and hides scrollability back to top
+# * Scroll
+# * Shows and hides the "back to top" scrollability
 # *
 # * Copyright (c) 2014 SoftLayer, an IBM Company
 # * Released under the MIT license

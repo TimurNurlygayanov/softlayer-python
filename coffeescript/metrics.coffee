@@ -37,7 +37,7 @@ month = [
 ]
 
 # Captures URLs from config.json and put them where they belong
-$.getJSON "public/js/config.json", (api) ->
+$.getJSON "../../public/js/config.json", (api) ->
   urlCommits = commits
   urlContributors = contributors
   urlMembers = members

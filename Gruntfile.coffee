@@ -37,6 +37,7 @@ module.exports = (grunt) ->
       before: [
         "public/css/main*"
         "public/js/main*"
+        "public/js/*.json"
         "validation-*.json"
         "*.lock"
         "_site"
@@ -55,15 +56,15 @@ module.exports = (grunt) ->
 
     # Pounds on Javascript until it becomes one file
     concat:
-      build:
+      main:
         options:
           banner: "<%= banner %>"
         src: [
           "<%= coffee.cache.dest %>metrics.js"
+          "<%= coffee.cache.dest %>drawer.js"
           "<%= coffee.cache.dest %>folio.js"
           "<%= coffee.cache.dest %>tocify.js"
-          "<%= coffee.cache.dest %>drawer.js"
-          "<%= coffee.cache.dest %>up.js"
+          "<%= coffee.cache.dest %>scroll.js"
         ]
         dest: "public/js/main.js"
 
@@ -72,8 +73,8 @@ module.exports = (grunt) ->
       options:
         banner: "<%= banner %>"
         report: "min"
-      build:
-        src: "<%= concat.build.dest %>"
+      main:
+        src: "<%= concat.main.dest %>"
         dest: "public/js/main.js"
 
     # Rounds up all the Less morsels to make one big CSS cookie
