@@ -1,6 +1,6 @@
 #
 # * Metrics
-# * Fetch payloads asynchronously from milestones, commits, and tags
+# * Fetch payloads asynchronously for milestones, commits, tags, members, contributors, and repos
 # *
 # * Copyright (c) 2014 SoftLayer, an IBM Company
 # * Released under the MIT license
@@ -23,7 +23,7 @@ month = [
 
 # Date and title from last milestone in a "closed" state
 $.ajax
-  url: "https://api.github.com/repos/softlayer/jumpgate/milestones?state=closed/callback?"
+  url: "https://api.github.com/repos/softlayer/softlayer-python/milestones?state=closed/callback?"
   dataType: "jsonp"
   success: (json) ->
     lastMilestone = json.data[0]
@@ -36,7 +36,7 @@ $.ajax
 
 # Date from last commit record in a "closed" state
 $.ajax
-  url: "https://api.github.com/repos/softlayer/jumpgate/commits?state=closed/callback?"
+  url: "https://api.github.com/repos/softlayer/softlayer-python/commits?state=closed/callback?"
   dataType: "jsonp"
   success: (json) ->
     lastCommit = json.data[0]
@@ -63,7 +63,7 @@ $.getJSON "https://api.github.com/orgs/softlayer/members?callback=?", (result) -
   return
 
 # Number of contributors
-$.getJSON "https://api.github.com/repos/softlayer/jumpgate/contributors?callback=?", (result) ->
+$.getJSON "https://api.github.com/repos/softlayer/softlayer-python/contributors?callback=?", (result) ->
   contributors = result.data
   $ ->
     $("#num-contributors").text contributors.length
