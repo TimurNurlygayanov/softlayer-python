@@ -42,7 +42,7 @@ module.exports = (grunt) ->
         "_site"
       ]
       # And cleans up once the party is over
-      after: ["coffeescript/.cache"]
+      after: ["coffeescript/.stash"]
 
     # Cooks CoffeeScript until it's a nice, golden JavaScript and drops it into a temp directory
     coffee:
