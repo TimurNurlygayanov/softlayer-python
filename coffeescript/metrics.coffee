@@ -31,8 +31,7 @@
       stamp = new Date(lastMilestone.updated_at)
       stampString = month[stamp.getMonth()] + " " + stamp.getDate()
       $("#date-milestone").text stampString
-      $("#title-milestone").text lastMilestone.title
-
+      $("#name-milestone").text lastMilestone.title
 
   # Date from last commit record in a "closed" state
   $.ajax
@@ -44,7 +43,6 @@
       stampString = month[stamp.getMonth()] + " " + stamp.getDate()
       $("#date-commit").text stampString
 
-
   # Number for last release/tag
   $.ajax
     url: "https://api.github.com/repos/softlayer/softlayer-python/tags?callback?"
@@ -53,14 +51,12 @@
       lastTag = json.data[0]
       $("#num-version").text lastTag.name
 
-
   # Number of team members
   $.getJSON "https://api.github.com/orgs/softlayer/members?callback=?", (result) ->
     members = result.data
     $ ->
       $("#num-members").text members.length
       return
-
 
   # Number of contributors
   $.getJSON "https://api.github.com/repos/softlayer/softlayer-python/contributors?callback=?", (result) ->
