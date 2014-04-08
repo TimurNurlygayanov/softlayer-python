@@ -50,7 +50,7 @@ module.exports = (grunt) ->
         expand: true
         cwd: "coffeescript/"
         src: ["*.coffee"]
-        dest: "coffeescript/.cache/"
+        dest: "coffeescript/.stash/"
         ext: ".js"
 
     # Pounds on Javascript until it becomes one file
@@ -138,7 +138,7 @@ module.exports = (grunt) ->
 
         files: [
           src: ["./_config.yml"]
-          dest: "coffeescript/.config/config.json"
+          dest: "coffeescript/config.json"
         ]
   }
 
@@ -154,19 +154,21 @@ module.exports = (grunt) ->
 
   grunt.registerTask "build", [
     "clean:before"
-    "yaml"
+    "yaml:config"
     "coffee"
     "concat"
     "uglify"
     "recess:minify"
+    "clean:after"
   ]
 
   grunt.registerTask "build:pretty", [
     "clean:before"
-    "yaml"
+    "yaml:config"
     "coffee"
     "concat"
     "recess:unminify"
+    "clean:after"
   ]
 
   grunt.registerTask "install", [
