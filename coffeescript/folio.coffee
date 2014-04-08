@@ -32,11 +32,9 @@
         addRepos repos, page + 1
       else
         $ ->
-          $("#repos").text repos.length
+          $("#count-repos").text repos.length
           $.each repos, (i, repo) ->
-
-            # converts pushed_at to Date
-            repo.pushed_at = new Date(repo.pushed_at)
+            repo.pushed_at = new Date(repo.pushed_at)  # converts pushed_at to Date
             weekHalfLife = 1.146 * Math.pow(10, -9)
             pushDelta = ("new Date") - Date.parse(repo.pushed_at)
             createdDelta = ("new Date") - Date.parse(repo.created_at)
@@ -45,16 +43,14 @@
             repo.hotness = weightForPush * Math.pow(Math.E, -1 * weekHalfLife * pushDelta)
             repo.hotness += weightForWatchers * repo.watchers / createdDelta
 
-          # Sort by highest # of watchers
-          repos.sort (a, b) ->
+          repos.sort (a, b) ->  # Sort by highest # of watchers
             return 1  if a.hotness < b.hotness
             -1  if b.hotness < a.hotness
 
           $.each repos, (i, repo) ->
             addRepo repo
 
-          # Sorts by most-recently pushed to
-          repos.sort (a, b) ->
+          repos.sort (a, b) ->  # Sort by recently pushed_at
             return 1  if a.pushed_at < b.pushed_at
             -1  if b.pushed_at < a.pushed_at
 
