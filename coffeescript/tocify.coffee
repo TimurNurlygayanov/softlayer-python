@@ -7,7 +7,6 @@
 #
 
 (($) ->
-
   $.fn.tocify = (options) ->
     defaults =
       showSpeed: "slow"
@@ -50,5 +49,4 @@
     return
 
   return
-
 ) jQuery
