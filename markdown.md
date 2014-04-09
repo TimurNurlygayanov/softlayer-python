@@ -15,9 +15,12 @@ Another definition for Markdown is [syntactic sugar](http://en.wikipedia.org/wik
 
 In short, Redcarpet runs your content through the ringer and spits out stylized HTML pages. And since it doesn't mess with your original content, you never have to touch HTML --- Redcarpet automatically creates new HTML pages whenever you make updates to your Markdown content.
 
-## In the wild
+## Markdown editors
 
-Except for the `<section>` and `<pre>` blocks, this page was written in Markdown. If you see something you like, or are just interested in observing how Markdown behaves in the wild, check out the [raw Markdown version on GitHub](http://raw.githubusercontent.com/softlayer/softlayer-python/gh-pages/markdown.md).
+Two editors have continuously impressed us in regards to performance, simplicity, feature-sets, and interoperability. If you're shopping for a reliable tool to get you started, checking out either of these is certainly worth the effort.
+
+* [Prose.io](http://prose.io) --- A content editor for GitHub designed for managing websites
+* [Markable.in](http://markable.in) --- A remarkable online Markdown editor
 
 
 # Paragraphs
