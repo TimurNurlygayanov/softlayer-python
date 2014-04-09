@@ -11,6 +11,7 @@ validation-*.json
 
 # File extensions
 .config
+.stash
 *~
 *.bak
 *.cache
