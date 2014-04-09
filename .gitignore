@@ -1,6 +1,7 @@
 # Folders
 _site/
 node_modules/
+.stash/
 
 # Files
 .DS_Store
@@ -11,7 +12,6 @@ validation-*.json
 
 # File extensions
 .config
-.stash
 *~
 *.bak
 *.cache
